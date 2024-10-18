@@ -24,6 +24,13 @@ module.exports = {
     name: 'Healthcare Packaging Newsletter',
     description: 'The go-to source for healthcare packaging professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
   },
+  modal: {
+    ...defaults,
+    enabled: false,
+    cookieValueToMatch: 1,
+    name: 'Healthcare Packaging Newsletter',
+    description: 'The go-to source for healthcare packaging professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
+  },
   signupBannerStatic: {
     ...defaults,
     name: 'You\'re Invited!',

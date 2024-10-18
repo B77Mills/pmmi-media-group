@@ -5,6 +5,7 @@ const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const i18n = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/i18n');
+const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -62,6 +63,9 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
+
+      // Use newsletterModalState middleware
+      app.use(newsletterModalState());
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
