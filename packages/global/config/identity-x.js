@@ -5,11 +5,13 @@ module.exports = ({
   appId,
   requiredServerFields,
   requiredClientFields,
+  forms = [],
   booleanQuestionsLabel = 'Choose your subscriptions:',
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
     appId,
+    forms,
     apiToken: process.env.IDENTITYX_API_TOKEN,
     requiredServerFields,
     requiredClientFields,

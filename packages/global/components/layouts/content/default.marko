@@ -4,17 +4,26 @@ import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/uti
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 import GlobalBodyWithInjection from "@pmmi-media-group/package-global/components/body-with-injection";
 import splitContentBody from "@pmmi-media-group/package-global/utils/split-content-body";
+import { shouldOverlay, restrictContentByReg, shouldTruncate } from "@parameter1/base-cms-marko-web-theme-monorail/utils/content-meter-helpers";
 
 $ const { global: $global } = out;
 $ const {
   site,
   config,
+  contentAccessState,
   contentGatingHandler,
+  contentMeterState,
   req,
   i18n
 } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
+
+$ contentAccessState.setFormDisplay({ req });
+$ const { formId: idxFormId, displayForm: displayIdxForm, cookie: idxSuveyCookie } = contentAccessState;
+
+$ const showOverlay = shouldOverlay(contentMeterState);
+
 
 $ const leadersContentTypes = input.leadersContentTypes || ["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"];
 $ const displayPrimaryImage = ["media-gallery", "document", "podcast"].includes(type) ? false : true;
@@ -114,13 +123,72 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
       $ const bodyClass = displayRail ? "content-page-body" : "";
         <div class=bodyClass>
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-            $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
+            $ const requiresRegistration = contentGatingHandler({ content }) || restrictContentByReg(contentMeterState, contentGatingHandler, content);
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
             <marko-web-identity-x-access|context|
               enabled=requiresRegistration
               required-access-level-ids=accessLevels
             >
-              <if(!context.canAccess || context.requiresUserInput)>
+              <if(idxFormId)>
+                <if(displayIdxForm)>
+                  $ const body = getContentPreview({ body: content.body, selector: "p:lt(5)" });
+                  <marko-web-content-body block-name=blockName obj={ body } />
+                  <div class="content-page-preview-overlay" />
+                  <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
+                    <marko-web-identity-x-context|{ hasUser, user, application }|>
+                    <if(hasUser)>
+                      <marko-web-identity-x-form-access
+                        content=content
+                        user=user
+                        formId=idxFormId
+                        application=application
+                      />
+                    </if>
+                    <else>
+                      <marko-web-identity-x-non-auth-identify|{ user: identifiedUser }|>
+                        <marko-web-identity-x-form-access
+                          updateProfileOnSubmit=false
+                          content=content
+                          user=identifiedUser
+                          formId=idxFormId
+                          application=application
+                        />
+                      </marko-web-identity-x-non-auth-identify>
+                    </else>
+                  </marko-web-identity-x-context>
+                </if>
+                <else>
+                  $ const bodyId = `content-body-${content.id}`;
+                  <theme-body-with-injection
+                    content=content
+                    aliases=[]
+                    block-name=blockName
+                    selector=bodyId
+                    preventHTMLInjection=true
+                  />
+                </else>
+              </if>
+              <else-if(shouldOverlay(contentMeterState))>
+                $ const body = showOverlay ? getContentPreview({ body: content.body, selector: "p:lt(5)" }) : getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+                <marko-web-content-body block-name=blockName modifiers=bodyModifiers obj={ body } lazyload-first-image=lazyloadFirstImage />
+
+                <div class="content-page-preview-overlay" />
+                <if(!showOverlay)>
+                  <theme-content-page-gate
+                    can-access=context.canAccess
+                    is-logged-in=context.isLoggedIn
+                    has-required-access-level=context.hasRequiredAccessLevel
+                    requires-access-level=context.requiresAccessLevel
+                    requires-user-input=context.requiresUserInput
+                    messages=context.messages
+                    user-input-title="Step 2 of 2"
+                    profile-call-to-action=""
+                    profile-button-label="Create Account"
+                    profile-event-name="content_meter_profile"
+                  />
+                </if>
+              </else-if>
+              <else-if(!context.canAccess || context.requiresUserInput)>
                 $ const body = getContentPreview({ body: content.body, selector: "p:lt(5)" });
                 $ const primaryImage = getContentPreview({primaryImage: content.primaryImage, selector: "primaryImage" });
                 <theme-primary-image-block
@@ -145,7 +213,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 />
                 <!-- Hidden content body field for seo purposes when content is gated. -->
                 <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
-              </if>
+              </else-if>
               <else>
                 <if(content.embedCode)>
                   $ const iframeContent = contentIframe(content);

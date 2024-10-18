@@ -2,7 +2,8 @@ const qf = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragme
 const companyQueryFragmentFn = require('../graphql/fragment-factories/content-company');
 const { factory: leadersContentQueryFactory } = require('../graphql/fragment-factories/content-page');
 
-const { newsletterState, formatContentResponse } = require('../middleware/newsletter-state');
+const { newsletterState } = require('../middleware/newsletter-state');
+const { formatContentResponse } = require('../middleware/format-content-response');
 const withContent = require('../middleware/with-content');
 const contact = require('../templates/content/contact');
 const company = require('../templates/content/company');

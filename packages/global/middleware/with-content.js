@@ -12,6 +12,10 @@ module.exports = (params = {}) => withContent({
       userRegistration {
         isCurrentlyRequired
       }
+      gating {
+        surveyId
+        surveyType
+      }
     }
   `,
 });
