@@ -39,35 +39,11 @@ module.exports = {
         width: 0.5,
       },
       {
-        label: 'Phone Number',
-        key: 'phoneNumber',
-        type: 'built-in',
+        label: 'Company Website URL',
+        id: '6a0cafaa74dcb4dd7466ee4c',
+        type: 'custom-text',
         required: true,
         width: 0.5,
-      },
-    ],
-    // Row 4
-    [
-      {
-        label: 'Country',
-        key: 'countryCode',
-        type: 'built-in',
-        required: true,
-        width: 0.33,
-      },
-      {
-        label: 'State/Province',
-        key: 'regionCode',
-        type: 'built-in',
-        required: false,
-        width: 0.33,
-      },
-      {
-        label: 'ZIP Code',
-        key: 'postalCode',
-        type: 'built-in',
-        required: false,
-        width: 0.33,
       },
     ],
   ],
