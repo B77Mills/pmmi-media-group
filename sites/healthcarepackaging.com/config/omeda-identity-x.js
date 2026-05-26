@@ -5,7 +5,6 @@ const idxConfig = require('./identity-x');
 module.exports = configure({
   omedaConfig,
   idxConfig,
-  rapidIdentProductId: 367,
   websiteBehaviorAttributeId: 199629,
   omedaPromoCodePrefix: 'HCP',
   omedaPromoCodeDefault: 'P1',

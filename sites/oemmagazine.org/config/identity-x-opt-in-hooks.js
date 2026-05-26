@@ -1,6 +1,6 @@
 module.exports = {
   /**
-   * @type {import("@allured-business-media/package-shared/config/omeda-identity-x.js")
+   * @type {import("@pmmi-media-group/package-global/config/omeda-identity-x.js")
    * .OIDXOnLoginLinkSentHookConfig}
    */
   onLoginLinkSent: {
@@ -8,10 +8,12 @@ module.exports = {
     deploymentTypeIds: [
       281, // OEM Newsletter,
     ],
-    productIds: [],
+    productIds: [
+      369,
+    ],
   },
   /**
-   * @type {import("@allured-business-media/package-shared/config/omeda-identity-x.js")
+   * @type {import("@pmmi-media-group/package-global/config/omeda-identity-x.js")
   * .OIDXOnUserProfileUpdateHookConfig}
   */
   onUserProfileUpdate: {
