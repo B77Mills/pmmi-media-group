@@ -7,5 +7,4 @@ module.exports = configure({
   idxConfig,
   websiteBehaviorAttributeId: 199630,
   omedaPromoCodePrefix: 'PW',
-  omedaPromoCodeDefault: 'P1',
 });

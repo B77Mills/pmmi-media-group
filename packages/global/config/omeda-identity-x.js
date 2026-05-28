@@ -11,27 +11,40 @@ const { get } = require('@mindful-web/object-path');
 const getPromoCodeFor = ({
   loginSource,
   data = {},
-  defaultPromoCode = 'P1',
-  promoCodePrefix,
+  defaultPromoCode = 'Default',
+  promoCodePrefix = 'P1',
+  newsletterSignup = {
+    pushdown: 'eNLPushdown',
+    inlineContent: 'eNLInline',
+    inlineSection: 'eNLInline',
+    footer: 'eNLFooter',
+    default: 'eNL',
+  },
+  comments = 'Comments',
+  contentMeterLogin = {
+    default: 'Meter',
+    overlay: 'MeterGate',
+  },
+  contentGate = 'HardGate',
   req,
 }) => {
   if (get(req, 'cookies.omeda_promo_code')) return get(req, 'cookies.omeda_promo_code');
   switch (loginSource) {
     case 'newsletterSignup':
-      return `${promoCodePrefix}_NL_${defaultPromoCode}`;
-      // if (data.newsletterSignupType === 'pushdown') return `${promoCodePrefix}eNLPushdown`;
-      // if (data.newsletterSignupType === 'inlineContent') return `${promoCodePrefix}eNLInline`;
-      // if (data.newsletterSignupType === 'inlineSection') return `${promoCodePrefix}eNLInline`;
-      // if (data.newsletterSignupType === 'footer') return `${promoCodePrefix}eNLFooter`;
+      if (data.newsletterSignupType === 'pushdown') return `${promoCodePrefix}${newsletterSignup.pushdown}`;
+      if (data.newsletterSignupType === 'inlineContent') return `${promoCodePrefix}${newsletterSignup.inlineContent}`;
+      if (data.newsletterSignupType === 'inlineSection') return `${promoCodePrefix}${newsletterSignup.inlineSection}`;
+      if (data.newsletterSignupType === 'footer') return `${promoCodePrefix}${newsletterSignup.footer}`;
+      return `${promoCodePrefix}${newsletterSignup.default}`;
     case 'comments':
-      return `${promoCodePrefix}Comments`;
+      return `${promoCodePrefix}${comments}`;
     case 'content_meter_login':
-      if (data.displayOverlay) return `${promoCodePrefix}MeterGate`;
-      return `${promoCodePrefix}Meter`;
+      if (data.displayOverlay) return `${promoCodePrefix}${contentMeterLogin.overlay}`;
+      return `${promoCodePrefix}${contentMeterLogin.default}`;
     case 'contentGate':
-      return `${promoCodePrefix}HardGate`;
+      return `${promoCodePrefix}${contentGate}`;
     default:
-      return `${promoCodePrefix}_${defaultPromoCode}`;
+      return `${promoCodePrefix}${defaultPromoCode}`;
   }
 };
 
