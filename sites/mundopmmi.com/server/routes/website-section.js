@@ -180,7 +180,7 @@ module.exports = (app) => {
     name: 'EXPO PACK MÉXICO 2026: INNOVACIONES QUE CONECTAN LA INDUSTRIA',
     description: 'EXPO PACK México 2026 dejó ver una industria que está ajustando su propio ritmo. Líneas más conectadas, automatización ya incorporada a la operación diaria y una sostenibilidad que empieza a traducirse en decisiones concretas de materiales y diseño. A esto se suman soluciones con IA y análisis de datos que están simplificando procesos de empaque y procesamiento, junto con sistemas de inspección cada vez más exigentes en planta. Esta cobertura de Mundo EXPO PACK recoge esas señales tempranas que revelan la transformación de la industria.',
     queryParams: {
-      includeLabels: ['EXPO PACK 2026'],
+      includeTaxonomyIds: [3202155],
     },
   })));
 
