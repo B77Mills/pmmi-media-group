@@ -77,6 +77,9 @@
                     <div v-if="node.websiteDeck">
                       {{ node.websiteDeck }}
                     </div>
+                    <div v-if="node.priorCompanies">
+                      <b>Prior Companies:</b> {{ node.priorCompanies }}
+                    </div>
                     <div v-if="node.cityStateZip">
                       <b>Location:</b> {{ node.cityStateZip }}
                     </div>
@@ -296,7 +299,6 @@ export default {
                 id
                 type
                 shortName
-                websiteDeck
                 labels
                 teaser(input: { useFallback: false, maxLength: null })
                 siteContext {
@@ -331,6 +333,10 @@ export default {
                   phone
                   tollfree
                   website
+                }
+                ... on ContentContact {
+                  websiteDeck
+                  priorCompanies: customAttribute(input: { path: "priorCompanies" })
                 }
                 websiteSchedules {
                   section {
