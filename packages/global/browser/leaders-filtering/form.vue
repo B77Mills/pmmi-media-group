@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="row" style="padding-bottom: 8px">
-      <div class="col-6">
-        <b style="font-size: 24px">Categories</b>
+      <div class="col-12">
+        <b style="font-size: 24px">{{ title }}</b>
       </div>
     </div>
     <div v-for="dropdownOption, index in dropdownOptions" :key="index">
@@ -39,6 +39,10 @@ export default {
     dropdownOptions: {
       type: Array,
       default: () => [],
+    },
+    title: {
+      type: String,
+      default: 'Categories',
     },
   },
   methods: {
