@@ -77,41 +77,22 @@
                     <div v-if="node.websiteDeck">
                       {{ node.websiteDeck }}
                     </div>
-                    <div v-if="node.priorCompanies">
-                      <b>Prior Companies:</b> {{ node.priorCompanies }}
+                    <div v-if="node.priorCompanies && node.priorCompanies.length">
+                      <b>Prior Companies:</b>
+                      <ul style="margin-left: -25px; margin-bottom: 0px">
+                        <li
+                          v-for="priorCompany in node.priorCompanies"
+                          :key="priorCompany"
+                        >
+                          <b class="section-feed-content-node__content-categories-listed-in">
+                            {{ priorCompany }}
+                          </b>
+                        </li>
+                      </ul>
                     </div>
                     <div v-if="node.cityStateZip">
                       <b>Location:</b> {{ node.cityStateZip }}
                     </div>
-                    <div
-                      v-if="node.websiteSchedules
-                        && node.websiteSchedules
-                          .filter(
-                            (schedule) =>
-                              String(schedule.section.site.id) === siteId
-                              && schedule.section.alias.match(leadersAlias)
-                              && schedule.section.alias !== leadersAlias).length
-                      "
-                    >
-                      <b>Core Capabilities:</b>
-                    </div>
-                    <ul style="margin-left: -25px">
-                      <li
-                        v-for="(schedule, scheduleIndex) in node.websiteSchedules
-                          .filter(
-                            (schedule) =>
-                              String(schedule.section.site.id) === siteId
-                              && schedule.section.alias.match(leadersAlias)
-                              && schedule.section.alias !== leadersAlias)
-                          .map((schedule) => schedule.section)
-                          .map((category) => category.fullName.replace(/.+? \> .+? \>/, '').trim())"
-                        :key="scheduleIndex"
-                      >
-                        <b class="section-feed-content-node__content-categories-listed-in">
-                          {{ schedule }}
-                        </b>
-                      </li>
-                    </ul>
                     <div>
                       <a
                         href="https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/"
@@ -372,7 +353,7 @@ export default {
         .map((edge) => (edge && edge.node ? edge.node : null))
         .filter((c) => c);
       const map = nodes.reduce(
-        (m, node) => m.set(`${node.id}`, node),
+        (m, node) => m.set(`${node.id}`, { ...node, priorCompanies: node.priorCompanies.split(',') }),
         new Map(),
       );
       const ordered = ids.map((id) => map.get(`${id}`)).filter((node) => node);
