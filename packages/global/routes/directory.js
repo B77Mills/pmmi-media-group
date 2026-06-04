@@ -44,12 +44,16 @@ module.exports = (
     next();
   };
 
-  app.get(`/:alias(${rootAlias})`, searchMiddleware, withWebsiteSection({
+  app.get('/leaders', searchMiddleware, withWebsiteSection({
     template: directory,
     queryFragment,
+    aliasResolver: () => rootAlias,
+    redirectOnPathMismatch: false,
   }));
-  app.get(`/:alias(${rootAlias}/[a-z0-9-/]+)`, searchMiddleware, withWebsiteSection({
+  app.get('/leaders/[a-z0-9-/]+', searchMiddleware, withWebsiteSection({
     template: directory,
     queryFragment,
+    aliasResolver: () => rootAlias,
+    redirectOnPathMismatch: false,
   }));
 };
