@@ -1,0 +1,146 @@
+import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
+import { set, get, getAsArray } from "@mindful-web/object-path";
+
+import queryFragment from "@pmmi-media-group/package-global/graphql/fragments/directory-section-featured-feed-block";
+
+$ const { id, alias, name, pageNode } = input;
+
+$ const {
+  $markoWebSearch: search,
+  apollo: apolloMindfulWebCMS,
+  GAM,
+  i18n,
+  site,
+  config
+} = out.global;
+$ if (alias !== get(search, "config.rootAlias")) {
+  set(out.global.$markoWebSearch, 'input.assignedToWebsiteSectionIds', [id]);
+  set(out.global.$markoWebSearch, 'query.assignedToWebsiteSectionIds', `${id}`);
+}
+$ const currentPage = search.getCurrentPage();
+$ const siteID = get(config, "websiteContext.id");
+
+<theme-website-section-page id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-p1-events-track-website-section node=section />
+    </marko-web-resolve-page>
+    <${input.head} />
+  </@head>
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const dropdownOptions = section.children.edges.reduce((prevArr, edge) => {
+        if (edge.node.id === 90344) {
+          prevArr.push(...edge.node.children.edges.map((edge) => ({
+            upperLevelSection: edge.node,
+            lowerLevelSections: [],
+          })));
+        }
+        return prevArr;
+      }, []);
+      $ const childAliases = section.children.edges.map((edge) => edge.node.alias).sort();
+      <marko-web-page-wrapper modifiers=["directory"]>
+        <@section|{ blockName }|>
+          <theme-breadcrumbs modifiers=["directory", "content-page"]>
+            $ const children = getAsArray(section, "hierarchy");
+            <for|child| of=children>
+                <@item>
+                  $ const link = search.input.searchQuery ? `/${child.alias}?searchQuery=${search.input.searchQuery}` : `/${child.alias}`;
+                  <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
+                </@item>
+            </for>
+          </theme-breadcrumbs>
+          <marko-web-website-section-name tag="h1" block-name=blockName obj=section attrs={ style: 'text-transform: none' }>
+            A Smarter Starting Point for Your Packaging and Processing Projects
+          </marko-web-website-section-name>
+          <marko-web-website-section-description
+            block-name=blockName
+            obj={
+              description:
+              "Finding qualified packaging and processing consulting experts to help you deliver on your next project shouldn’t slow you down. The <em>Packaging World</em> Advisor Network is a curated list of experienced, trusted, and vetted independent packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food and beverage processing operations. Browse advisor backgrounds and fill out the form to be connected.",
+          }/>
+        </@section>
+        <@section>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="mb-block">
+                <marko-web-browser-component
+                  name="GlobalLeadersFilteringForm"
+                  props={ dropdownOptions, title: 'Core Capabilities' }
+                />
+              </div>
+            </div>
+            <div class="col-md-9" style="padding-left: 25px">
+              $ const featuredQueryParams = {
+                sectionAlias: alias,
+                limit: 4,
+                optionName: 'Pinned' ,
+                queryFragment,
+              }
+              <marko-web-query|{ nodes: featuredNodes }| name='website-scheduled-content' params=featuredQueryParams collapsible=false>
+                <if(featuredNodes.length)>
+                  <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
+                    <marko-web-node-list
+                      inner-justified=false
+                      flush-x=false
+                      flush-y=false
+                      modifiers=["directory-section-feed", "featured-listings"]
+                    >
+                      <@header>
+                        Featured
+                        <theme-menu-toggle-button
+                          class='directory-featured-listing__toggle'
+                          targets=['.directory-featured-listing__item--wrapper']
+                          toggle-class='directory-featured-listing__item--open'
+                          initially-expanded=true
+                          icon-modifiers=["sm"]
+                          icon-name="chevron-up"
+                          expanded-icon-name="chevron-down"
+                        />
+                      </@header>
+                      <@nodes nodes=featuredNodes>
+                        <@slot|{ node }|>
+                          $ node.categoriesListedIn = node.websiteSchedules.filter((schedule) => String(schedule.section.site.id) === siteID && schedule.section.alias.match(alias) && schedule.section.alias !== alias).map((schedule) => schedule.section).map((category) => category.fullName.replace(/.+? \>/, '').trim());
+                          <global-directory-section-feed-content-node node=node with-teaser=true display-image=true with-dates=false with-country=true />
+                        </@slot>
+                      </@nodes>
+                    </marko-web-node-list>
+                  </div>
+                </if>
+                <marko-web-browser-component
+                  name="GlobalLeadersResults"
+                  props={
+                    defaultAssignedToWebsiteSectionIds: [
+                      90349,
+                      90351,
+                      90354,
+                      90356,
+                      90347,
+                      90346,
+                      90345,
+                      90350,
+                      90355,
+                      90353,
+                      90348,
+                      90352
+                    ],
+                    siteId: siteID,
+                    incomingCursorDirection: search.input.cursorDirection,
+                    incomingCursorValue: search.input.cursorValue,
+                    incomingAssignedToWebsiteSectionIds: search.input.assignedToWebsiteSectionIds,
+                    leadersAlias: 'advisor-network',
+                    contentType: 'CONTACT',
+                  }
+                />
+              </marko-web-query>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</theme-website-section-page>
