@@ -77,14 +77,20 @@
                     <div v-if="node.websiteDeck">
                       {{ node.websiteDeck }}
                     </div>
-                    <div v-if="node.priorCompanies && node.priorCompanies.length">
+                    <div
+                      v-if="node.priorCompanies && node.priorCompanies.length"
+                      style="padding-top: 8px"
+                    >
                       <b>Prior Companies:</b>
                       <ul style="margin-left: -25px; margin-bottom: 0px">
                         <li
                           v-for="priorCompany in node.priorCompanies"
                           :key="priorCompany"
                         >
-                          <b class="section-feed-content-node__content-categories-listed-in">
+                          <b
+                            class="section-feed-content-node__content-categories-listed-in"
+                            style="color: #000000"
+                          >
                             {{ priorCompany }}
                           </b>
                         </li>

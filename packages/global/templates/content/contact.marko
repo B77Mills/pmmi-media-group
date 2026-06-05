@@ -49,12 +49,12 @@ $ const perPage = 10;
             obj=content
           />
           <if(content.priorCompanies && content.priorCompanies.length)>
-            <div>
-              <b>Prior Companies:</b>
+            <div style="padding-top: 8px">
+              <b style="font-size: 20px"> Prior Companies:</b>
               <ul style="margin-left: -25px; margin-bottom: 0px">
               <for|priorCompany| of=content.priorCompanies.split(',')>
                 <li>
-                  <b class="section-feed-content-node__content-categories-listed-in" style="color: #002f7b">
+                  <b class="section-feed-content-node__content-categories-listed-in">
                     ${priorCompany}
                   </b>
                 </li>
@@ -75,7 +75,7 @@ $ const perPage = 10;
               <b style="font-size: 20px">Core Capabilities:</b>
               <ul style="margin-left: -25px;">
                 <for|schedule, scheduleIndex| of=advisorNetworkSchedules>
-                  <li><b class="section-feed-content-node__content-categories-listed-in" style="color: #002f7b">${schedule}</b></li>
+                  <li><b class="section-feed-content-node__content-categories-listed-in">${schedule}</b></li>
                 </for>
               </ul>
             </div>
