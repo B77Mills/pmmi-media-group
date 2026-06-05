@@ -22,7 +22,6 @@ $ const siteID = get(config, "websiteContext.id");
 
 <theme-website-section-page id=id alias=alias name=name>
   <@head>
-    <meta name="robots" content="noindex">
     <marko-web-gtm-website-section-context|{ context }| alias=alias>
       <marko-web-gtm-push data=context />
     </marko-web-gtm-website-section-context>
