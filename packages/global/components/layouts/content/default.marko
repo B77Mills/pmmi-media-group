@@ -109,6 +109,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           path=content.siteContext.path
           providers=["print", "email", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          ssr=true
         />
       </if>
     </div>
@@ -331,6 +332,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     path=content.siteContext.path
                     providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
                     print-path=`/print/content/${content.id}`
+                    ssr=true
                   />
                 </if>
 

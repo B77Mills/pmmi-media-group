@@ -55,6 +55,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
           path=content.siteContext.path
           providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          ssr=true
         />
     </div>
   </@section>
@@ -121,6 +122,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
               path=content.siteContext.path
               providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
               print-path=`/print/content/${content.id}`
+              ssr=true
             />
 
             <marko-web-leaders-company-videos content-id=content.id />
