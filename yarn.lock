@@ -590,6 +590,18 @@
   dependencies:
     dayjs "^1.11.7"
 
+"@mindful-web/dependency-tool@^1.57.0":
+  version "1.57.0"
+  resolved "https://registry.yarnpkg.com/@mindful-web/dependency-tool/-/dependency-tool-1.57.0.tgz#4a0068c4e380c70f422d9e0aaf558cc9cebf77fa"
+  integrity sha512-TIrX4oNwt7dmNZNl8aVIUMww1GuDP+vze0pF0TtzOOWC3d0KgYLetFykSaDlujXPv9rIHPjlkjTcqW3zKFBMvw==
+  dependencies:
+    "@mindful-web/object-path" "^1.57.0"
+    chalk "^4.1.2"
+    fancy-log "^2.0.0"
+    fast-glob "^3.2.12"
+    minimist "^1.2.8"
+    semver "^7.3.8"
+
 "@mindful-web/embedded-media@^1.57.0":
   version "1.57.0"
   resolved "https://registry.yarnpkg.com/@mindful-web/embedded-media/-/embedded-media-1.57.0.tgz#1cd4cfbb057a0bf1b91ff079c9a9e46e39dc3996"
@@ -966,10 +978,10 @@
     node-fetch "^2.6.9"
     ua-parser-js "^1.0.33"
 
-"@mindful-web/marko-web@^1.70.3":
-  version "1.70.3"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web/-/marko-web-1.70.3.tgz#1ae74087237a1aa845feee6779ad0e3aba81d862"
-  integrity sha512-LeZOOk9b0yTt9hxMxovwtAoTJmTALGgkK6rOLtJBGz1T7WlVz1I9Cqic2mRY4NuFHht3ZNAoYklqYV9oMf91Ow==
+"@mindful-web/marko-web@^1.71.1":
+  version "1.71.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web/-/marko-web-1.71.1.tgz#4058fd155ee0f53c1449c3dd2f6207b0cf5e1216"
+  integrity sha512-zgnvGxNb3v/pmJyZfROkfikK7gQ4+zrb9/CD1d/V43No/Xhw7ekEl4A+OFbgbW2gB7bbOOSSr3alwkkc9gfWXQ==
   dependencies:
     "@godaddy/terminus" "^4.11.2"
     "@mindful-web/apollo-ssr" "^1.0.0"
@@ -1041,10 +1053,10 @@
   resolved "https://registry.yarnpkg.com/@mindful-web/utils/-/utils-1.57.0.tgz#cf9264a26143bd08f216edf0fcbe6d2bf9852418"
   integrity sha512-juuhtK+9RQOe4iFMVm9D3D0I6Nmdn7b9z2GrfLY4e7pIcz+YMCmGw5w2ST0xXkMaKr6s66WbOLA8k+GNQyhA5g==
 
-"@mindful-web/web-cli@^1.68.0":
-  version "1.68.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/web-cli/-/web-cli-1.68.0.tgz#6974215cbc3d2fdaefd03872cbdd107375a22e88"
-  integrity sha512-MGMLSSUhlGBnvOvNYBCgJuSosDSlJJ6SAM2EPoOeaQZ140PdsNOmVQP6NTbRhe7lvDA/Pp8EXGJG6gPpuWuVdg==
+"@mindful-web/web-cli@^1.71.4":
+  version "1.71.4"
+  resolved "https://registry.yarnpkg.com/@mindful-web/web-cli/-/web-cli-1.71.4.tgz#967f9de5132e5551bee04988ac06d56a53d65537"
+  integrity sha512-ckqFRiAPcymR6+k4jgSHnDfGSlJR0xQrU2AE2/0PYjfmQYO68MrQ+0Nt2Xk+tF7Aa9OnG/7rPKQ2yTVgm3pN9w==
   dependencies:
     "@fullhuman/postcss-purgecss" "^5.0.0"
     "@mindful-web/marko-compiler" "^1.57.0"
@@ -7383,6 +7395,11 @@ semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.6, semve
   integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
     lru-cache "^6.0.0"
+
+semver@^7.3.8:
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.3.tgz#c350de61c2a1ddbc96d7fae3e5b6fcf92d477fbe"
+  integrity sha512-wnilbGyMxzbY7dNOl7jpKbLSjcfeweJWU5j4+u5qW+6/wuGD9KzIGOyZnQVSBM9E7DtWaaH3CyHkppYrKYoxwg==
 
 send@0.18.0:
   version "0.18.0"

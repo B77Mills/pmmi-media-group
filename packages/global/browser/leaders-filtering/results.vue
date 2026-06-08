@@ -17,6 +17,7 @@
               class="node-list__node"
             >
               <div
+                v-if="node.type === 'company'"
                 class="section-feed-content-node section-feed-content-node--company-content-type"
               >
                 <div class="section-feed-content-node__contents">
@@ -49,6 +50,66 @@
                         </b>
                       </li>
                     </ul>
+                  </div>
+                </div>
+                <div class="section-feed-content-node__image-wrapper">
+                  <a v-if="node.primaryImage" :href="node.siteContext.path"><img
+                    :src="buildImgixUrl(node.primaryImage.src)"
+                    :data-src="buildImgixUrl(node.primaryImage.src)"
+                    :data-srcset="buildImgixUrl(node.primaryImage.src) + '2x'"
+                    class="section-feed-content-node__image ls-is-cached lazyloaded"
+                    :alt="node.primaryImage.alt"
+                    :srcset="buildImgixUrl(node.primaryImage.src) + '2x'"
+                  ></a>
+                </div>
+              </div>
+              <div
+                v-else-if="node.type === 'contact'"
+                class="section-feed-content-node section-feed-content-node--contact-content-type"
+              >
+                <div class="section-feed-content-node__contents">
+                  <div class="section-feed-content-node__body">
+                    <h5 class="section-feed-content-node__content-short-name">
+                      <a
+                        :href="node.siteContext.path"
+                      >{{ node.shortName }}</a>
+                    </h5>
+                    <div v-if="node.websiteDeck">
+                      {{ node.websiteDeck }}
+                    </div>
+                    <div
+                      v-if="node.priorCompanies && node.priorCompanies.length"
+                      style="padding-top: 8px"
+                    >
+                      <b>Prior Companies:</b>
+                      <ul style="margin-left: -25px; margin-bottom: 0px">
+                        <li
+                          v-for="priorCompany in node.priorCompanies"
+                          :key="priorCompany"
+                        >
+                          <b
+                            class="section-feed-content-node__content-categories-listed-in"
+                            style="color: #000000"
+                          >
+                            {{ priorCompany }}
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <div v-if="node.cityStateZip">
+                      <b>Location:</b> {{ node.cityStateZip }}
+                    </div>
+                    <div>
+                      <a
+                        href="https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/"
+                        :title="`Connect with ${node.shortName}`"
+                        target="_blank"
+                        class="btn btn-primary"
+                        rel="noopener"
+                      >
+                        Connect »
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="section-feed-content-node__image-wrapper">
@@ -114,6 +175,10 @@ export default {
       type: String,
       required: true,
     },
+    contentType: {
+      type: String,
+      default: 'COMPANY',
+    },
   },
   data: () => ({
     results: {},
@@ -172,7 +237,7 @@ export default {
           postInterfaceSearchConnectionUsingLegacyWebsiteParams(
           view: "${view}",
           assignedToWebsiteSectionIds: ${JSON.stringify(finalizedAssignedToWebsiteSectionIds())},
-          contentTypes: ["COMPANY"],
+          contentTypes: ["${this.contentType}"],
           sortField: NAME,
           sortOrder: ASC,
           cursorDirection: ${cursorDirection || this.incomingCursorDirection || 'AFTER'},
@@ -256,6 +321,10 @@ export default {
                   tollfree
                   website
                 }
+                ... on ContentContact {
+                  websiteDeck
+                  priorCompanies: customAttribute(input: { path: "priorCompanies" })
+                }
                 websiteSchedules {
                   section {
                     id
@@ -290,7 +359,7 @@ export default {
         .map((edge) => (edge && edge.node ? edge.node : null))
         .filter((c) => c);
       const map = nodes.reduce(
-        (m, node) => m.set(`${node.id}`, node),
+        (m, node) => m.set(`${node.id}`, { ...node, priorCompanies: node.priorCompanies.split(',') }),
         new Map(),
       );
       const ordered = ids.map((id) => map.get(`${id}`)).filter((node) => node);
