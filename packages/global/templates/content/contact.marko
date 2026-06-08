@@ -1,10 +1,10 @@
-import { getAsArray } from "@mindful-web/object-path";
+import { get, getAsArray } from "@mindful-web/object-path";
 import { buildImgixUrl } from "@mindful-web/image";
 import queryFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/section-feed-block";
 
 $ const { id, type, pageNode } = data;
 
-$ const { pagination: p, req } = out.global;
+$ const { pagination: p, req, config } = out.global;
 $ const perPage = 10;
 
 <global-content-wrapper-layout
@@ -48,8 +48,38 @@ $ const perPage = 10;
             block-name=blockName
             obj=content
           />
+          <if(content.priorCompanies && content.priorCompanies.length)>
+            <div style="padding-top: 8px">
+              <b style="font-size: 20px"> Prior Companies:</b>
+              <ul style="margin-left: -25px; margin-bottom: 0px">
+              <for|priorCompany| of=content.priorCompanies.split(',')>
+                <li>
+                  <b class="section-feed-content-node__content-categories-listed-in">
+                    ${priorCompany}
+                  </b>
+                </li>
+              </for>
+              </ul>
+            </div>
+          </if>
           <marko-web-content-city-state-zip block-name=blockName obj=content />
           $ const schedules = getAsArray(content, "websiteSchedules");
+          $ const siteId = get(config, "websiteContext.id");
+          $ const advisorNetworkSchedules = schedules.filter(
+            (schedule) =>
+              String(schedule.section.site.id) === siteId
+              && schedule.section.alias.match("advisor-network")
+              && schedule.section.alias !== "advisor-network").map((schedule) => schedule.section).map((category) => category.fullName.replace(/.+? \> .+? \>/, '').trim());
+          <if(advisorNetworkSchedules.length)>
+            <div style="margin-top: 5px">
+              <b style="font-size: 20px">Core Capabilities:</b>
+              <ul style="margin-left: -25px;">
+                <for|schedule, scheduleIndex| of=advisorNetworkSchedules>
+                  <li><b class="section-feed-content-node__content-categories-listed-in">${schedule}</b></li>
+                </for>
+              </ul>
+            </div>
+          </if>
           <marko-web-content-body block-name=blockName obj=content />
         </theme-page-contents>
 

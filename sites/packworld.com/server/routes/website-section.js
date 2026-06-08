@@ -12,7 +12,7 @@ const superCategory = require('@pmmi-media-group/package-global/templates/websit
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
-const advisorNetwork = require('../templates/advisor-network');
+const advisorNetworkRoute = require('./advisor-network');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
@@ -201,10 +201,25 @@ module.exports = (app) => {
     queryFragment: emergingBrandsFragment,
   }));
 
-  app.get('/:alias(advisor-network)', newsletterState(), withWebsiteSection({
-    template: advisorNetwork,
-    queryFragment: emergingBrandsFragment,
-  }));
+  // Company directory
+  advisorNetworkRoute(app, {
+    assignedToWebsiteSectionIds: [
+      90349,
+      90351,
+      90354,
+      90356,
+      90347,
+      90346,
+      90345,
+      90350,
+      90355,
+      90353,
+      90348,
+      90352,
+    ],
+    contentTypes: ['Contact'],
+    rootAlias: 'advisor-network',
+  });
 
   app.get('/:alias(industries/beverage)', newsletterState(), withWebsiteSection({
     template: section,
