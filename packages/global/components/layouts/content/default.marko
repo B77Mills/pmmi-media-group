@@ -103,7 +103,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           <theme-content-published-node block-name=blockName obj=content />
         </theme-page-dates>
       </if>
-      <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
+      <theme-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
       <if(displaySocialShare)>
         <marko-web-social-sharing
           path=content.siteContext.path
