@@ -53,8 +53,9 @@ $ const actionText = i18n("signing up to receive your email notifications");
       <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
         <marko-web-social-sharing
           path=content.siteContext.path
-          providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+          providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          ssr=true
         />
     </div>
   </@section>
@@ -119,8 +120,9 @@ $ const actionText = i18n("signing up to receive your email notifications");
 
             <marko-web-social-sharing
               path=content.siteContext.path
-              providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+              providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
               print-path=`/print/content/${content.id}`
+              ssr=true
             />
 
             <marko-web-leaders-company-videos content-id=content.id />
