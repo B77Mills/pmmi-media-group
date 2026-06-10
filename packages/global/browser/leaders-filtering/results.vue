@@ -99,7 +99,7 @@
                     <div v-if="node.cityStateZip">
                       <b>Location:</b> {{ node.cityStateZip }}
                     </div>
-                    <div>
+                    <div v-if="node.externalLinks">
                       <a
                         :href="(node.externalLinks.filter(({ url }) => url.match(/wufoo/)).pop())?.url || 'https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/'"
                         :title="`Connect with ${node.shortName}`"
@@ -363,7 +363,7 @@ export default {
         .map((edge) => (edge && edge.node ? edge.node : null))
         .filter((c) => c);
       const map = nodes.reduce(
-        (m, node) => m.set(`${node.id}`, { ...node, priorCompanies: node.priorCompanies.split(',') }),
+        (m, node) => m.set(`${node.id}`, { ...node, ...(node.priorCompanies && { priorCompanies: node.priorCompanies.split(',') }) }),
         new Map(),
       );
       const ordered = ids.map((id) => map.get(`${id}`)).filter((node) => node);
