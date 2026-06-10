@@ -102,6 +102,9 @@ const factory = ({ useLinkInjectedBody = false } = {}) => {
         }
       }
       priorCompanies: customAttribute(input: { path: "priorCompanies" })
+      externalLinks {
+        url
+      }
     }
     `;
   fragment.factory = factory;
