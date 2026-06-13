@@ -1,12 +1,19 @@
 import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
 import { getAsArray, get } from "@mindful-web/object-path";
+import buildGeoStructuredData from "@pmmi-media-group/package-global/utils/build-geo-structured-data";
+import contentGeoMetadataFragment from "@pmmi-media-group/package-global/graphql/fragments/content-geo-metadata";
 
 $ const { id, type, pageNode } = input;
 $ const { GAM } = out.global;
 $ const sections = getAsArray(input, "sections");
 $ const alias = get(input, "primarySection.alias");
 
-<theme-content-page id=id type=type>
+<theme-content-page
+  id=id
+  type=type
+  structured-data-query-fragment=contentGeoMetadataFragment
+  build-structured-data=buildGeoStructuredData
+>
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
@@ -14,6 +21,9 @@ $ const alias = get(input, "primarySection.alias");
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       <marko-web-p1-events-track-content node=content />
       <global-gam-content-targeting obj=content />
+      <if(get(content, "geoSummary"))>
+        <meta name="geo:summary" content=get(content, "geoSummary") />
+      </if>
     </marko-web-resolve-page>
   </@head>
   <@page>

@@ -124,6 +124,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
       $ const bodyClass = displayRail ? "content-page-body" : "";
         <div class=bodyClass>
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            <global-content-geo content=content block-name=blockName />
             $ const requiresRegistration = contentGatingHandler({ content });
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
             <marko-web-identity-x-access|context|

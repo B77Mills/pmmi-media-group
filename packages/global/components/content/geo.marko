@@ -1,0 +1,20 @@
+import { get } from "@mindful-web/object-path";
+
+$ const { content, blockName = "page-contents" } = input;
+$ const summary = get(content, "geoSummary");
+$ const keyFacts = get(content, "geoKeyFacts");
+
+<if(summary || keyFacts)>
+  <marko-web-element block-name=blockName name="content-geo">
+    <if(summary)>
+      <marko-web-element block-name=blockName name="content-geo-summary" tag="p">
+        ${summary}
+      </marko-web-element>
+    </if>
+    <if(keyFacts)>
+      <marko-web-element block-name=blockName name="content-geo-key-facts">
+        $!{keyFacts}
+      </marko-web-element>
+    </if>
+  </marko-web-element>
+</if>

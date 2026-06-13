@@ -6,6 +6,13 @@ const factory = ({ useLinkInjectedBody = false, leadersAlias = '' } = {}) => {
       id
       name
       labels
+      # GEO (staged): these Content fields are rendered by <global-content-geo> at
+      # the top of the article and feed the head meta tag. They are commented out
+      # until the mindful-web graphql-server exposes them — see
+      # scripts/geo/README.md. Requesting an undefined field here fails the whole
+      # content query ("Cannot query field \"geoSummary\" on type \"Content\"").
+      # geoSummary
+      # geoKeyFacts
       teaser(input: { useFallback: false, maxLength: null })
       body(input: { useLinkInjectedBody: ${useLinkInjectedBody} })
       status
