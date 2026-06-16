@@ -87,21 +87,21 @@
                           v-for="priorCompany in node.priorCompanies"
                           :key="priorCompany"
                         >
-                          <b
+                          <span
                             class="section-feed-content-node__content-categories-listed-in"
                             style="color: #000000"
                           >
                             {{ priorCompany }}
-                          </b>
+                          </span>
                         </li>
                       </ul>
                     </div>
                     <div v-if="node.cityStateZip">
                       <b>Location:</b> {{ node.cityStateZip }}
                     </div>
-                    <div>
+                    <div v-if="node.externalLinks">
                       <a
-                        href="https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/"
+                        :href="(node.externalLinks.filter(({ url }) => url.match(/wufoo/)).pop())?.url || 'https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/'"
                         :title="`Connect with ${node.shortName}`"
                         target="_blank"
                         class="btn btn-primary"
@@ -232,6 +232,7 @@ export default {
         return this.defaultAssignedToWebsiteSectionIds;
       };
       const view = this.siteId === '5d0a748572c1aa35008b4567' ? 'mundo' : 'main';
+      const limit = this.contentType === 'CONTACT' ? 10 : 4;
       const query = `
         query {
           postInterfaceSearchConnectionUsingLegacyWebsiteParams(
@@ -242,7 +243,7 @@ export default {
           sortOrder: ASC,
           cursorDirection: ${cursorDirection || this.incomingCursorDirection || 'AFTER'},
           cursorValue: "${cursorValue || this.incomingCursorValue || ''}",
-          limit: 4,
+          limit: ${limit},
           ) {
             edges {
               node {
@@ -324,6 +325,9 @@ export default {
                 ... on ContentContact {
                   websiteDeck
                   priorCompanies: customAttribute(input: { path: "priorCompanies" })
+                  externalLinks {
+                    url
+                  }
                 }
                 websiteSchedules {
                   section {
@@ -359,7 +363,7 @@ export default {
         .map((edge) => (edge && edge.node ? edge.node : null))
         .filter((c) => c);
       const map = nodes.reduce(
-        (m, node) => m.set(`${node.id}`, { ...node, priorCompanies: node.priorCompanies.split(',') }),
+        (m, node) => m.set(`${node.id}`, { ...node, ...(node.priorCompanies && { priorCompanies: node.priorCompanies.split(',') }) }),
         new Map(),
       );
       const ordered = ids.map((id) => map.get(`${id}`)).filter((node) => node);

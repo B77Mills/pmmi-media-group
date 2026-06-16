@@ -54,9 +54,9 @@ $ const perPage = 10;
               <ul style="margin-left: -25px; margin-bottom: 0px">
               <for|priorCompany| of=content.priorCompanies.split(',')>
                 <li>
-                  <b class="section-feed-content-node__content-categories-listed-in">
+                  <span class="section-feed-content-node__content-categories-listed-in">
                     ${priorCompany}
-                  </b>
+                  </span>
                 </li>
               </for>
               </ul>
@@ -75,9 +75,21 @@ $ const perPage = 10;
               <b style="font-size: 20px">Core Capabilities:</b>
               <ul style="margin-left: -25px;">
                 <for|schedule, scheduleIndex| of=advisorNetworkSchedules>
-                  <li><b class="section-feed-content-node__content-categories-listed-in">${schedule}</b></li>
+                  <li><span class="section-feed-content-node__content-categories-listed-in">${schedule}</span></li>
                 </for>
               </ul>
+            </div>
+            $ const connectUrl = (content.externalLinks.filter(({ url }) => url.match(/wufoo/)).pop())?.url || 'https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/';
+            <div>
+              <a
+                href=connectUrl
+                title=`Connect with ${content.name}`
+                target="_blank"
+                class="btn btn-primary"
+                rel="noopener"
+              >
+                Connect »
+              </a>
             </div>
           </if>
           <marko-web-content-body block-name=blockName obj=content />
