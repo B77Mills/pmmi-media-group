@@ -19,14 +19,6 @@
   "<global-gam-content-targeting>": {
     "template": "./gam-content-targeting.marko"
   },
-  "<global-content-geo>": {
-    "template": "./content/geo.marko",
-    "@content": {
-      "type": "object",
-      "required": true
-    },
-    "@block-name": "string"
-  },
   "<global-sponsored-label-logo>": {
     "template": "./sponsored-label-logo.marko"
   },
