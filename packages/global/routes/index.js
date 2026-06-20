@@ -1,7 +1,7 @@
 const { get } = require('@mindful-web/object-path');
 const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
 const companySearchHandler = require('@mindful-web/marko-web-theme-monorail/routes/company-search');
-const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
+const defaultRoutes = require('@mindful-web/marko-web-theme-monorail/routes');
 const search = require('@mindful-web/marko-web-theme-monorail/routes/search');
 const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
 const omedaNewsletters = require('@mindful-web/marko-web-omeda/routes/omeda-newsletters');
@@ -79,8 +79,8 @@ module.exports = (app, siteConfig) => {
   // Redirects
   redirects(app);
 
-  // Remote component/block loader
-  renderBlock(app);
+  // Theme-level default routes (e.g. email-preview, render-block)
+  defaultRoutes(app);
 
   // Taxonomy pages (for handling redirects from old WP sites)
   taxonomy(app);
