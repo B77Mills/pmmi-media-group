@@ -223,44 +223,15 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 $ const bodyId = `content-body-${content.id}`;
 
                 <global-supplier-submitted-block labels=content.labels />
-                <if(type === "article")>
-                  $ const contentBodyWithInjections = GlobalBodyWithInjection.renderToString({
-                    content,
-                    aliases,
-                    blockName,
-                    selector: bodyId,
-                    preventHTMLInjection: !shouldInjectAds,
-                    desktopLeaderboardAdName: "top-inline-content-desktop",
-                    mobileLeaderboardAdName: "top-inline-content-mobile",
-                    $global
-                  });
-                  $ const { partOne, partTwo } = splitContentBody({ body: content.body, contentBodyWithInjections });
-                  <marko-web-content-body block-name=blockName obj={ body: partOne } />
-                  <if(partTwo)>
-                    <div id="content-page-preview-overlay" class="content-page-preview-overlay" />
-                    <marko-web-browser-component
-                      name="GlobalStoryContinuesButton"
-                      props={ label: i18n("Story Continues") }
-                    />
-                    <marko-web-content-body
-                      block-name=blockName
-                      obj={ body: partTwo }
-                      attrs={ style: "display: none;", id: "content-body-part-two" }
-                      modifiers=["ld-json"]
-                    />
-                  </if>
-                </if>
-                <else>
-                  <theme-body-with-injection
-                    content=content
-                    aliases=aliases
-                    block-name=blockName
-                    selector=bodyId
-                    preventHTMLInjection=!shouldInjectAds
-                    desktopLeaderboardAdName="top-inline-content-desktop"
-                    mobileLeaderboardAdName="top-inline-content-mobile"
-                  />
-                </else>
+                <theme-body-with-injection
+                  content=content
+                  aliases=aliases
+                  block-name=blockName
+                  selector=bodyId
+                  preventHTMLInjection=!shouldInjectAds
+                  desktopLeaderboardAdName="top-inline-content-desktop"
+                  mobileLeaderboardAdName="top-inline-content-mobile"
+                />
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
                   <div id=`transcript-${id}` class="page-contents__content-transcript">
