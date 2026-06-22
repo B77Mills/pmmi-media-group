@@ -50,10 +50,4 @@ module.exports = (
     aliasResolver: () => rootAlias,
     redirectOnPathMismatch: false,
   }));
-  app.get('/leaders/[a-z0-9-/]+', searchMiddleware, withWebsiteSection({
-    template: directory,
-    queryFragment,
-    aliasResolver: () => rootAlias,
-    redirectOnPathMismatch: false,
-  }));
 };

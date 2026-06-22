@@ -223,6 +223,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 $ const bodyId = `content-body-${content.id}`;
 
                 <global-supplier-submitted-block labels=content.labels />
+<<<<<<< HEAD
                 <theme-content-geo-summary-block content=content title="Key Takeaways" />
                 <if(type === "article")>
                   $ const contentBodyWithInjections = GlobalBodyWithInjection.renderToString({
@@ -262,6 +263,17 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     mobileLeaderboardAdName="top-inline-content-mobile"
                   />
                 </else>
+=======
+                <theme-body-with-injection
+                  content=content
+                  aliases=aliases
+                  block-name=blockName
+                  selector=bodyId
+                  preventHTMLInjection=!shouldInjectAds
+                  desktopLeaderboardAdName="top-inline-content-desktop"
+                  mobileLeaderboardAdName="top-inline-content-mobile"
+                />
+>>>>>>> dd520dc66bde4f62231016ed7c866c56434837ee
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
                   <div id=`transcript-${id}` class="page-contents__content-transcript">
