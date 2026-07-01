@@ -38,6 +38,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'oemmagazine.org' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
