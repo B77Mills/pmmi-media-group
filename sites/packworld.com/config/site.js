@@ -38,6 +38,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.packworld.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {

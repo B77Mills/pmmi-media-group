@@ -39,6 +39,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'profoodworld.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
