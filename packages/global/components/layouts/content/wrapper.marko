@@ -4,7 +4,7 @@ import buildGeoStructuredData from "@pmmi-media-group/package-global/utils/build
 import contentGeoMetadataFragment from "@pmmi-media-group/package-global/graphql/fragments/content-geo-metadata";
 
 $ const { id, type, pageNode } = input;
-$ const { GAM } = out.global;
+$ const { contentMeterState, GAM } = out.global;
 $ const sections = getAsArray(input, "sections");
 $ const alias = get(input, "primarySection.alias");
 
@@ -14,6 +14,19 @@ $ const alias = get(input, "primarySection.alias");
   structured-data-query-fragment=contentGeoMetadataFragment
   build-structured-data=buildGeoStructuredData
 >
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      <if(contentMeterState && !contentMeterState.isLoggedIn)>
+        <theme-content-meter-block
+          content=content
+          views=contentMeterState.views
+          view-limit=contentMeterState.viewLimit
+          display-overlay=contentMeterState.displayOverlay
+          display-gate=contentMeterState.displayGate
+        />
+      </if>
+    </marko-web-resolve-page>
+  </@above-container>
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
