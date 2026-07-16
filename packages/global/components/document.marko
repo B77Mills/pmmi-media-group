@@ -4,7 +4,6 @@ import { get } from "@mindful-web/object-path";
 
 $ const {
   config,
-  contentMeterState,
   i18n,
   identityX,
   nativeX,
@@ -158,14 +157,6 @@ $ const buttonLabels = { continue: continueLabel };
         actionText: i18n("signing up to receive your email notifications") }
     />
     <identity-x-newsletter-modal />
-    <if(contentMeterState && !contentMeterState.isLoggedIn)>
-      <theme-content-meter-block
-        views=contentMeterState.views
-        view-limit=contentMeterState.viewLimit
-        display-overlay=contentMeterState.displayOverlay
-        display-gate=contentMeterState.displayGate
-      />
-    </if>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
