@@ -46,14 +46,18 @@ not on the host.
 
 The staged selections are now uncommented:
 
-1. **Article render + head meta tag** —
+1. **Article render (visible block)** —
    `packages/global/graphql/fragment-factories/content-page.js`
    `geoSummary`, `geoKeyFacts`, and `geoSummaryDisplay` in `LeadersContentPageFragment`.
 
-2. **JSON-LD description override** —
-   `packages/global/graphql/fragments/content-geo-metadata.js`
-   `geoSummary` in `ContentGeoMetadataFragment`.
-   (Only `geoSummary` is needed here — JSON-LD/meta don't use the display toggle.)
+2. **JSON-LD description override + head meta tag** — framework-provided as of
+   `@mindful-web/marko-web` >= 1.72.2 (PR parameter1/mindful-web#260). The default
+   content-metadata query requests `geoSummary`, the default `buildStructuredData`
+   overrides the JSON-LD `description` with it, and `<meta name="geo:summary">` is
+   emitted automatically. **No site-side wiring required** — the former local
+   `utils/build-geo-structured-data.js` and `graphql/fragments/content-geo-metadata.js`
+   were removed, and the `structured-data-query-fragment` / `build-structured-data`
+   props plus the head meta tag were dropped from `wrapper.marko`.
 
 With the fields present:
 - `<theme-content-geo-summary-block>` (from `marko-web-theme-monorail`) renders the
@@ -62,10 +66,10 @@ With the fields present:
   allowed content types (article/news) on long-form bodies (>300 words); the visible
   summary is suppressed when `geoSummaryDisplay === "HIDDEN"`, and `VISIBLE` forces it
   on regardless of content type.
-- `<meta name="geo:summary">` is emitted in the document head
-  (`components/layouts/content/wrapper.marko`) regardless of the display toggle.
+- `<meta name="geo:summary">` is emitted in the document head by the framework
+  (`@mindful-web/marko-web` content metadata), regardless of the display toggle.
 - The JSON-LD `description` prefers `geoSummary`, falling back to the existing
-  `metadata.description` (`utils/build-geo-structured-data.js`).
+  `metadata.description`, via the framework's default `buildStructuredData`.
 
 ---
 
@@ -75,8 +79,9 @@ With the fields present:
   in this repo (only `HIDDEN` suppresses it). Change the `showSummary` rule in
   `components/content/geo.marko` if a different default is wanted per site.
 - **`geo:summary` meta name** is a custom, non-standard tag chosen to avoid
-  colliding with the framework-managed `<meta name="description">`. Adjust the
-  name in `wrapper.marko` if a different convention is preferred.
+  colliding with the framework-managed `<meta name="description">`. It is now
+  emitted by `@mindful-web/marko-web`; change it there if a different convention
+  is preferred.
 - **Promotion to the theme (done)**: the visible block now lives in
   `marko-web-theme-monorail` (>= 1.72.1) as `<theme-content-geo-summary-block>`
   (standalone `.content-geo-summary` block) with its SCSS at
@@ -86,8 +91,11 @@ With the fields present:
   The local `content/geo.marko` and `scss/components/_content-geo.scss` were removed.
   The block accepts an optional `title` (defaults to "Article Summary").
 
-  The metadata layer (`build-geo-structured-data.js`, `content-geo-metadata.js`,
-  `wrapper.marko` meta tag) remains site-side — promoting it is a possible follow-up.
+  The metadata layer (JSON-LD `geoSummary` description override + `geo:summary`
+  meta tag) has since been promoted into `@mindful-web/marko-web` (>= 1.72.2,
+  PR parameter1/mindful-web#260) and made the framework default, so the local
+  `build-geo-structured-data.js` / `content-geo-metadata.js` and the `wrapper.marko`
+  wiring were removed as redundant.
 - **Other content fragments**: only `LeadersContentPageFragment` (the standard
   article/content route) was wired. If GEO fields should appear on other content
   types (contact, company, webinar, whitepaper, media-gallery), add the same
