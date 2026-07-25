@@ -83,6 +83,9 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-PWZTDXM',
     slotPrefix: 'mundo',
   },
+  ga4: {
+    propertyId: '316574887',
+  },
   gcse: {
     id: '017383739850048358259:ngawhyv_sgi',
   },
