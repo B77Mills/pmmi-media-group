@@ -84,6 +84,9 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-M596Q98',
     slotPrefix: 'oem',
   },
+  ga4: {
+    propertyId: '316595702',
+  },
   gcse: {
     id: '003355913687346718228:znjzr8aiziw',
   },

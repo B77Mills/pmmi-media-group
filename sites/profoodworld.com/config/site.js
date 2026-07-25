@@ -85,6 +85,9 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-MW8Q9VC',
     slotPrefix: 'pfw',
   },
+  ga4: {
+    propertyId: '316593780',
+  },
   gcse: {
     id: '003355913687346718228:spwkpiwssik',
   },
