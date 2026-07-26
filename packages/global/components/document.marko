@@ -144,6 +144,9 @@ $ const buttonLabels = { continue: continueLabel };
       </else>
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
+    <if(identityX && identityX.config.get('googleAuth.clientId') && !identityX.token)>
+      <marko-web-identity-x-google-init />
+    </if>
     <marko-web-browser-component name="DynamicSiteMenuPositioner" />
     <${input.aboveContainer} />
   </@above-container>
