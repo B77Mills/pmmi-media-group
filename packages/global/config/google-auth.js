@@ -15,7 +15,7 @@
  * factory / idx config defaults it to 'profile-gate'.)
  */
 module.exports = {
-  clientId: '',
+  clientId: '230848296425-1oqs7m0cb6b7br6lp4ibd2umf3qhbr6v.apps.googleusercontent.com',
   autoPrompt: false,
   signInButtonEnabled: false,
 };
