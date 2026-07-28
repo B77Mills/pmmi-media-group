@@ -38,6 +38,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.packworld.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
@@ -80,6 +81,9 @@ module.exports = {
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-TK8WXJR',
     slotPrefix: 'pw',
+  },
+  ga4: {
+    propertyId: '316170169',
   },
   gcse: {
     id: '003355913687346718228:trgtl90veyh',

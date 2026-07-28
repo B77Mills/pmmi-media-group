@@ -50,11 +50,12 @@ $ const actionText = i18n("signing up to receive your email notifications");
       <theme-page-dates|{ blockName }|>
         Starts: <marko-web-content-start-date block-name=blockName obj=content format="MMMM Do YYYY, h:mm a z"/>
       </theme-page-dates>
-      <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
+      <theme-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
         <marko-web-social-sharing
           path=content.siteContext.path
-          providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+          providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          ssr=true
         />
     </div>
   </@section>
@@ -93,6 +94,10 @@ $ const actionText = i18n("signing up to receive your email notifications");
 
             <global-supplier-submitted-block labels=content.labels />
             <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+            <marko-web-p1-events-track-content-scroll-depth
+              content=content
+              selector=`#content-body-${content.id}`
+            />
 
             <!-- needs input -->
             <if(input.afterBody)>
@@ -119,8 +124,9 @@ $ const actionText = i18n("signing up to receive your email notifications");
 
             <marko-web-social-sharing
               path=content.siteContext.path
-              providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+              providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
               print-path=`/print/content/${content.id}`
+              ssr=true
             />
 
             <marko-web-leaders-company-videos content-id=content.id />

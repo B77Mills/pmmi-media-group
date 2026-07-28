@@ -1,9 +1,12 @@
 import convert from "@mindful-web/marko-web-native-x/utils/convert-story-to-content";
 
+$ const { site } = out.global;
 $ const { story } = input;
 $ const content = convert(story);
 $ const { id, type } = content;
 $ const { primarySection } = content;
+$ const mindfulConfig = site.getAsObject("mindful");
+$ const namespace = mindfulConfig?.namespace;
 
 <theme-default-page title=story.title description=story.teaser>
   <@head>
@@ -12,6 +15,7 @@ $ const { primarySection } = content;
     </marko-web-gtm-native-x-story-context>
     <marko-web-native-x-gtm-init />
     <marko-web-p1-events-track-native-story story=story />
+    <marko-web-p1-events-track-social-share story=story namespace=namespace />
   </@head>
   <@page>
     <marko-web-native-x-story-track-init story=story />
@@ -27,7 +31,7 @@ $ const { primarySection } = content;
             </@item>
           </theme-breadcrumbs>
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
-          <presented-by advertiser=story.advertiser />
+          <theme-content-presented-by advertiser=story.advertiser />
         </div>
       </@section>
 
@@ -38,7 +42,8 @@ $ const { primarySection } = content;
             <marko-web-content-body block-name=blockName obj=content />
             <marko-web-social-sharing
               url=content.siteContext.canonicalUrl
-              providers=["facebook", "linkedin", "twitter", "pinterest"]
+              providers=["facebook", "linkedin", "twitter", "pinterest", "google"]
+              ssr=true
             />
           </theme-page-contents>
         </div>

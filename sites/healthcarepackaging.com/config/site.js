@@ -38,6 +38,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'healthcarepackaging.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
@@ -82,6 +83,9 @@ module.exports = {
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-T7LSZ5W',
     slotPrefix: 'hcp',
+  },
+  ga4: {
+    propertyId: '316491473',
   },
   gcse: {
     id: '003355913687346718228:67nzwbjjldd',

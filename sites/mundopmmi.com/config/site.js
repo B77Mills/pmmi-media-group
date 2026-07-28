@@ -40,6 +40,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.mundopmmi.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
@@ -81,6 +82,9 @@ module.exports = {
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-PWZTDXM',
     slotPrefix: 'mundo',
+  },
+  ga4: {
+    propertyId: '316574887',
   },
   gcse: {
     id: '017383739850048358259:ngawhyv_sgi',

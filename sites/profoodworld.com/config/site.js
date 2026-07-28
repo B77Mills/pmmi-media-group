@@ -39,6 +39,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'profoodworld.com' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
@@ -83,6 +84,9 @@ module.exports = {
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-MW8Q9VC',
     slotPrefix: 'pfw',
+  },
+  ga4: {
+    propertyId: '316593780',
   },
   gcse: {
     id: '003355913687346718228:spwkpiwssik',

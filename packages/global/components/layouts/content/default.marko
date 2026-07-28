@@ -6,7 +6,6 @@ import GlobalBodyWithInjection from "@pmmi-media-group/package-global/components
 import splitContentBody from "@pmmi-media-group/package-global/utils/split-content-body";
 import { shouldOverlay, shouldTruncate } from "@mindful-web/marko-web-theme-monorail/utils/content-meter-helpers";
 
-$ const { global: $global } = out;
 $ const {
   site,
   config,
@@ -103,12 +102,13 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           <theme-content-published-node block-name=blockName obj=content />
         </theme-page-dates>
       </if>
-      <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
+      <theme-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
       <if(displaySocialShare)>
         <marko-web-social-sharing
           path=content.siteContext.path
-          providers=["print", "email", "facebook", "linkedin", "twitter", "pinterest"]
+          providers=["print", "email", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          ssr=true
         />
       </if>
     </div>
@@ -145,6 +145,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     block-name=blockName
                     selector=bodyId
                     preventHTMLInjection=true
+                    track-scroll-depth=true
                     desktopLeaderboardAdName="top-inline-content-desktop"
                     mobileLeaderboardAdName="top-inline-content-mobile"
                   />
@@ -222,44 +223,17 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 $ const bodyId = `content-body-${content.id}`;
 
                 <global-supplier-submitted-block labels=content.labels />
-                <if(type === "article")>
-                  $ const contentBodyWithInjections = GlobalBodyWithInjection.renderToString({
-                    content,
-                    aliases,
-                    blockName,
-                    selector: bodyId,
-                    preventHTMLInjection: !shouldInjectAds,
-                    desktopLeaderboardAdName: "top-inline-content-desktop",
-                    mobileLeaderboardAdName: "top-inline-content-mobile",
-                    $global
-                  });
-                  $ const { partOne, partTwo } = splitContentBody({ body: content.body, contentBodyWithInjections });
-                  <marko-web-content-body block-name=blockName obj={ body: partOne } />
-                  <if(partTwo)>
-                    <div id="content-page-preview-overlay" class="content-page-preview-overlay" />
-                    <marko-web-browser-component
-                      name="GlobalStoryContinuesButton"
-                      props={ label: i18n("Story Continues") }
-                    />
-                    <marko-web-content-body
-                      block-name=blockName
-                      obj={ body: partTwo }
-                      attrs={ style: "display: none;", id: "content-body-part-two" }
-                      modifiers=["ld-json"]
-                    />
-                  </if>
-                </if>
-                <else>
-                  <theme-body-with-injection
-                    content=content
-                    aliases=aliases
-                    block-name=blockName
-                    selector=bodyId
-                    preventHTMLInjection=!shouldInjectAds
-                    desktopLeaderboardAdName="top-inline-content-desktop"
-                    mobileLeaderboardAdName="top-inline-content-mobile"
-                  />
-                </else>
+                <theme-content-geo-summary-block content=content title="Key Takeaways" />
+                <theme-body-with-injection
+                  content=content
+                  aliases=aliases
+                  block-name=blockName
+                  selector=bodyId
+                  preventHTMLInjection=!shouldInjectAds
+                  track-scroll-depth=true
+                  desktopLeaderboardAdName="top-inline-content-desktop"
+                  mobileLeaderboardAdName="top-inline-content-mobile"
+                />
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
                   <div id=`transcript-${id}` class="page-contents__content-transcript">
@@ -329,8 +303,9 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <if(displaySocialShare)>
                   <marko-web-social-sharing
                     path=content.siteContext.path
-                    providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                    providers=["print", "facebook", "linkedin", "twitter", "pinterest", "google"]
                     print-path=`/print/content/${content.id}`
+                    ssr=true
                   />
                 </if>
 

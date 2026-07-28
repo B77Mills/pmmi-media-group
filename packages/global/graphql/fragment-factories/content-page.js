@@ -6,6 +6,11 @@ const factory = ({ useLinkInjectedBody = false, leadersAlias = '' } = {}) => {
       id
       name
       labels
+      # GEO fields — rendered by <theme-content-geo-summary-block> at the top of the
+      # article and feed the head meta tag (see scripts/geo/README.md).
+      geoSummary
+      geoKeyFacts
+      geoSummaryDisplay
       teaser(input: { useFallback: false, maxLength: null })
       body(input: { useLinkInjectedBody: ${useLinkInjectedBody} })
       status

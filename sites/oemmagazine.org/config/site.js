@@ -38,6 +38,7 @@ module.exports = {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'oemmagazine.org' : '',
+    engagement: { enabled: true },
   },
   logos: {
     navbar: {
@@ -82,6 +83,9 @@ module.exports = {
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-M596Q98',
     slotPrefix: 'oem',
+  },
+  ga4: {
+    propertyId: '316595702',
   },
   gcse: {
     id: '003355913687346718228:znjzr8aiziw',

@@ -590,6 +590,18 @@
   dependencies:
     dayjs "^1.11.7"
 
+"@mindful-web/dependency-tool@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/dependency-tool/-/dependency-tool-1.80.2.tgz#b5795aaf8cba79b412d2c57cb1f555f670d718d8"
+  integrity sha512-MAke8iR8jTOXHWftZ/u38z5g3BvIrg4dO2KYloJAtvjBvFMh0pC/mHkTVhkolixOS/9lc5PNxcSAouloYwBg7Q==
+  dependencies:
+    "@mindful-web/object-path" "^1.80.2"
+    chalk "^4.1.2"
+    fancy-log "^2.0.0"
+    fast-glob "^3.2.12"
+    minimist "^1.2.8"
+    semver "^7.3.8"
+
 "@mindful-web/embedded-media@^1.80.2":
   version "1.80.2"
   resolved "https://registry.yarnpkg.com/@mindful-web/embedded-media/-/embedded-media-1.80.2.tgz#16f377b96581cc4614d09e9b11e5e8d7c19cc770"
@@ -7465,6 +7477,11 @@ semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.6, semve
   integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
     lru-cache "^6.0.0"
+
+semver@^7.3.8:
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.3.tgz#c350de61c2a1ddbc96d7fae3e5b6fcf92d477fbe"
+  integrity sha512-wnilbGyMxzbY7dNOl7jpKbLSjcfeweJWU5j4+u5qW+6/wuGD9KzIGOyZnQVSBM9E7DtWaaH3CyHkppYrKYoxwg==
 
 send@0.18.0:
   version "0.18.0"

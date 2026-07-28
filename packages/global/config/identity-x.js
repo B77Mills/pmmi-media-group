@@ -1,5 +1,6 @@
 const IdentityXConfiguration = require('@mindful-web/marko-web-identity-x/config');
 const newrelic = require('newrelic');
+const googleAuth = require('./google-auth');
 
 module.exports = ({
   appId,
@@ -17,6 +18,7 @@ module.exports = ({
     requiredClientFields,
     booleanQuestionsLabel,
     onHookError: newrelic.noticeError.bind(newrelic),
+    googleAuth,
     ...rest,
   });
   return config;

@@ -1,7 +1,6 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const downloads = require('@pmmi-media-group/package-global/templates/website-section/downloads');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
@@ -13,8 +12,7 @@ const superCategory = require('@pmmi-media-group/package-global/templates/websit
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
-const advisorNetwork = require('../templates/advisor-network');
-const leaders = require('../templates/website-section/leaders');
+const advisorNetworkRoute = require('./advisor-network');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
@@ -193,11 +191,6 @@ module.exports = (app) => {
     description: 'Packaging webinars cover equipment, machinery, design, materials, sustainability, e-commerce, workforce, regulation, innovation, cannabis, & logistics.',
   })));
 
-  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
-    template: leaders,
-    queryFragment: leadersFragment,
-  }));
-
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
     template: withTopStoriesBlock,
     queryFragment,
@@ -208,10 +201,25 @@ module.exports = (app) => {
     queryFragment: emergingBrandsFragment,
   }));
 
-  app.get('/:alias(advisor-network)', newsletterState(), withWebsiteSection({
-    template: advisorNetwork,
-    queryFragment: emergingBrandsFragment,
-  }));
+  // Company directory
+  advisorNetworkRoute(app, {
+    assignedToWebsiteSectionIds: [
+      90349,
+      90351,
+      90354,
+      90356,
+      90347,
+      90346,
+      90345,
+      90350,
+      90355,
+      90353,
+      90348,
+      90352,
+    ],
+    contentTypes: ['Contact'],
+    rootAlias: 'advisor-network',
+  });
 
   app.get('/:alias(industries/beverage)', newsletterState(), withWebsiteSection({
     template: section,

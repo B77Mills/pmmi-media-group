@@ -5,8 +5,8 @@ const MarkoWebSearch = require('@mindful-web/marko-web-search');
 const { MindfulApiClient } = require('@mindful-web/mindful/api-client');
 const { MindfulMarkoWebService } = require('@mindful-web/mindful/marko-web/service');
 const mindfulNamespaceMap = require('@mindful-web/marko-web-theme-monorail/config/mindful-namespace-map');
-const queryFragment = require('../graphql/fragments/website-directory-section-page');
-const directory = require('../templates/directory/index');
+const queryFragment = require('@pmmi-media-group/package-global/graphql/fragments/website-directory-section-page');
+const template = require('../templates/advisor-network/new');
 
 module.exports = (
   app,
@@ -44,10 +44,12 @@ module.exports = (
     next();
   };
 
-  app.get('/leaders', searchMiddleware, withWebsiteSection({
-    template: directory,
+  app.get(`/:alias(${rootAlias})`, searchMiddleware, withWebsiteSection({
+    template,
     queryFragment,
-    aliasResolver: () => rootAlias,
-    redirectOnPathMismatch: false,
+  }));
+  app.get(`/:alias(${rootAlias}/[a-z0-9-/]+)`, searchMiddleware, withWebsiteSection({
+    template,
+    queryFragment,
   }));
 };

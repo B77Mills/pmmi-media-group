@@ -4,7 +4,6 @@ import { get } from "@mindful-web/object-path";
 
 $ const {
   config,
-  contentMeterState,
   i18n,
   identityX,
   nativeX,
@@ -145,6 +144,9 @@ $ const buttonLabels = { continue: continueLabel };
       </else>
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
+    <if(identityX && identityX.config.get('googleAuth.clientId') && !identityX.token)>
+      <marko-web-identity-x-google-init />
+    </if>
     <marko-web-browser-component name="DynamicSiteMenuPositioner" />
     <${input.aboveContainer} />
   </@above-container>
@@ -158,14 +160,6 @@ $ const buttonLabels = { continue: continueLabel };
         actionText: i18n("signing up to receive your email notifications") }
     />
     <identity-x-newsletter-modal />
-    <if(contentMeterState && !contentMeterState.isLoggedIn)>
-      <theme-content-meter-block
-        views=contentMeterState.views
-        view-limit=contentMeterState.viewLimit
-        display-overlay=contentMeterState.displayOverlay
-        display-gate=contentMeterState.displayGate
-      />
-    </if>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

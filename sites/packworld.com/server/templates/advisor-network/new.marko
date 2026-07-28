@@ -1,7 +1,7 @@
 import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
 import { set, get, getAsArray } from "@mindful-web/object-path";
 
-import queryFragment from "../../graphql/fragments/directory-section-featured-feed-block";
+import queryFragment from "@pmmi-media-group/package-global/graphql/fragments/directory-section-featured-feed-block";
 
 $ const { id, alias, name, pageNode } = input;
 
@@ -32,21 +32,13 @@ $ const siteID = get(config, "websiteContext.id");
   </@head>
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ section.name = section.name.replace("Z_Company Categories", "Leaders");
       $ const aliases = hierarchyAliases(section);
       $ const dropdownOptions = section.children.edges.reduce((prevArr, edge) => {
-        // This is to remove empty primary level categories from being filterable
-        if (![89594, 89564, 89571, 89572, 89574, 89576, 89578, 89580].includes(edge.node.id)) {
-          prevArr.push({
+        if (edge.node.id === 90344) {
+          prevArr.push(...edge.node.children.edges.map((edge) => ({
             upperLevelSection: edge.node,
-            lowerLevelSections: edge.node.children.edges.reduce((prevArr, edge) => {
-            // This is to remove empty secondary level categories from being filterable
-            if (![89655, 89696, 89607, 89618, 89619].includes(edge.node.id)) {
-              prevArr.push(edge.node)
-            }
-            return prevArr;
-            }, []),
-          });
+            lowerLevelSections: [],
+          })));
         }
         return prevArr;
       }, []);
@@ -54,7 +46,7 @@ $ const siteID = get(config, "websiteContext.id");
       <marko-web-page-wrapper modifiers=["directory"]>
         <@section|{ blockName }|>
           <theme-breadcrumbs modifiers=["directory", "content-page"]>
-            $ const children = getAsArray(section, "hierarchy").map(({ name, ...rest }) => ({ ...rest, name: name.replace("Z_Company Categories", "Leaders")}));
+            $ const children = getAsArray(section, "hierarchy");
             <for|child| of=children>
                 <@item>
                   $ const link = search.input.searchQuery ? `/${child.alias}?searchQuery=${search.input.searchQuery}` : `/${child.alias}`;
@@ -62,34 +54,23 @@ $ const siteID = get(config, "websiteContext.id");
                 </@item>
             </for>
           </theme-breadcrumbs>
-          <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
-            $!{value}
+          <marko-web-website-section-name tag="h1" block-name=blockName obj=section attrs={ style: 'text-transform: none' }>
+            A Smarter Starting Point for Your Packaging and Processing Projects
           </marko-web-website-section-name>
-          <marko-web-website-section-description block-name=blockName obj=section />
+          <marko-web-website-section-description
+            block-name=blockName
+            obj={
+              description:
+              "Finding qualified packaging and processing consulting experts to help you deliver on your next project shouldn’t slow you down. The <em>Packaging World</em> Advisor Network is a curated list of experienced, trusted, and vetted independent packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food and beverage processing operations. Browse advisor backgrounds and fill out the form to be connected.",
+          }/>
         </@section>
         <@section>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="leaders-index-page__logo" style="margin-right: 0px">
-                <marko-web-img
-                  src=site.get("leaders.header.imgSrc")
-                  alt=site.get("leaders.title")
-                />
-              </div>
-            </div>
-            <div class="col-md-9" style="padding-left: 25px">
-              <div class="mt-block">
-                <div class="company-search__title"> Company Search:</div>
-                <global-company-search-block />
-              </div>
-            </div>
-          </div>
           <div class="row">
             <div class="col-md-3">
               <div class="mb-block">
                 <marko-web-browser-component
                   name="GlobalLeadersFilteringForm"
-                  props={ dropdownOptions }
+                  props={ dropdownOptions, title: 'Core Capabilities' }
                 />
               </div>
             </div>
@@ -133,25 +114,31 @@ $ const siteID = get(config, "websiteContext.id");
                 <marko-web-browser-component
                   name="GlobalLeadersResults"
                   props={
-                    defaultAssignedToWebsiteSectionIds: [id],
+                    defaultAssignedToWebsiteSectionIds: [
+                      90349,
+                      90351,
+                      90354,
+                      90356,
+                      90347,
+                      90346,
+                      90345,
+                      90350,
+                      90355,
+                      90353,
+                      90348,
+                      90352
+                    ],
                     siteId: siteID,
                     incomingCursorDirection: search.input.cursorDirection,
                     incomingCursorValue: search.input.cursorValue,
                     incomingAssignedToWebsiteSectionIds: search.input.assignedToWebsiteSectionIds,
-                    leadersAlias: site.get('leaders.alias'),
+                    leadersAlias: 'advisor-network',
+                    contentType: 'CONTACT',
                   }
                 />
               </marko-web-query>
             </div>
           </div>
-        </@section>
-        <@section|{ alias }| modifiers=["leaders-full-width"]>
-          <global-leaders-all />
-          <style>
-            .site-footer {
-              z-index: 0 !important;
-            }
-          </style>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>

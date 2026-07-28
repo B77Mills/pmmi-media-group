@@ -96,7 +96,14 @@ const factory = ({ useLinkInjectedBody = false } = {}) => {
           name
           fullName
           alias
+          site {
+            id
+          }
         }
+      }
+      priorCompanies: customAttribute(input: { path: "priorCompanies" })
+      externalLinks {
+        url
       }
     }
     `;
