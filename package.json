@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@mindful-web/eslint": "^1.0.0",
-    "@mindful-web/marko-compiler": "^1.57.0",
+    "@mindful-web/marko-compiler": "^1.80.2",
     "@mindful-web/browserslist-config": "^1.0.0",
     "lerna": "^6.5.1"
   },
