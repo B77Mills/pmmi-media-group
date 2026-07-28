@@ -7,5 +7,4 @@ module.exports = configure({
   idxConfig,
   websiteBehaviorAttributeId: 199629,
   omedaPromoCodePrefix: 'HCP',
-  omedaPromoCodeDefault: 'P1',
 });
