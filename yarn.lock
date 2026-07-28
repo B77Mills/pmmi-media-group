@@ -590,25 +590,25 @@
   dependencies:
     dayjs "^1.11.7"
 
-"@mindful-web/dependency-tool@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/dependency-tool/-/dependency-tool-1.57.0.tgz#4a0068c4e380c70f422d9e0aaf558cc9cebf77fa"
-  integrity sha512-TIrX4oNwt7dmNZNl8aVIUMww1GuDP+vze0pF0TtzOOWC3d0KgYLetFykSaDlujXPv9rIHPjlkjTcqW3zKFBMvw==
+"@mindful-web/dependency-tool@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/dependency-tool/-/dependency-tool-1.80.2.tgz#b5795aaf8cba79b412d2c57cb1f555f670d718d8"
+  integrity sha512-MAke8iR8jTOXHWftZ/u38z5g3BvIrg4dO2KYloJAtvjBvFMh0pC/mHkTVhkolixOS/9lc5PNxcSAouloYwBg7Q==
   dependencies:
-    "@mindful-web/object-path" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
     chalk "^4.1.2"
     fancy-log "^2.0.0"
     fast-glob "^3.2.12"
     minimist "^1.2.8"
     semver "^7.3.8"
 
-"@mindful-web/embedded-media@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/embedded-media/-/embedded-media-1.57.0.tgz#1cd4cfbb057a0bf1b91ff079c9a9e46e39dc3996"
-  integrity sha512-hsInHC7nLfJw5aJJasvcjwM3ZvqKUgYPhB64OAF8hU0y6OB5dCIV2HFMcfvyAcOMRmJrYzUNe01piiEJamrwfQ==
+"@mindful-web/embedded-media@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/embedded-media/-/embedded-media-1.80.2.tgz#16f377b96581cc4614d09e9b11e5e8d7c19cc770"
+  integrity sha512-Fent0WSCGZSVkYupkZxg9mZYBRV9cWJE4NRb+LWzU96HHNP3+mse3Aqs7Xw/XJoKUhrpbaA63YaaILo+YiptpQ==
   dependencies:
     "@mindful-web/html" "^1.0.0"
-    "@mindful-web/image" "^1.57.0"
+    "@mindful-web/image" "^1.80.2"
     "@mindful-web/inflector" "^1.0.0"
     cheerio "^1.0.0-rc.12"
     escape-string-regexp "^1.0.5"
@@ -658,14 +658,14 @@
     html2plaintext "^2.1.4"
     striptags "^3.2.0"
 
-"@mindful-web/image@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/image/-/image-1.57.0.tgz#2ef4dd01826f5485eb63335c7c4f835eb2de1f9e"
-  integrity sha512-81MPhRuZS6FncTkk8o02DFqfm+tbcCFwCbAMYbGRAp1zHL7pjfEjZGvjVy+i/w+8V37UwO24APy4Nb8Dh/MYxw==
+"@mindful-web/image@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/image/-/image-1.80.2.tgz#cf583cd50091471631bff69ba2316363f97c2e4e"
+  integrity sha512-ElcO63v26crENr2X1nw6pg8PKV0P8jU/uAo5Bp4fgcZJKRi4DX27/dp7ObdOQDJmcprEKs3N12riInW2dpr2Xw==
   dependencies:
     "@mindful-web/html" "^1.0.0"
     "@mindful-web/inflector" "^1.0.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
 
 "@mindful-web/inflector@^1.0.0":
   version "1.0.0"
@@ -683,28 +683,28 @@
     portal-vue "^2.1.7"
     vue "^2.7.14"
 
-"@mindful-web/marko-compiler@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-compiler/-/marko-compiler-1.57.0.tgz#11865e0baa4db4fea167dbcdc6e960a4795c78e8"
-  integrity sha512-yWGmI3fpyNoKfKOuul7JpdxEMo/3KgMaT5QOUciFeb2B1oHyC57cGiUn2GNVBL2hw5KPHyomSFw3EV5mM24LAg==
+"@mindful-web/marko-compiler@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-compiler/-/marko-compiler-1.80.2.tgz#a1ec75052fe13c5e853bc340499007fb8f267326"
+  integrity sha512-f2dPziw1XSphSx1uE9lEmoMsTS1kW9ui6iTVpjeQ0eQOQ++hTOMNlTWIWQm8thH05V0+iUY1ijjQdnfUjqwqZA==
   dependencies:
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
     chalk "^4.1.2"
     fancy-log "^2.0.0"
     fast-glob "^3.2.12"
     marko "~4.20.0"
     minimist "^1.2.8"
 
-"@mindful-web/marko-core@^1.70.3":
-  version "1.70.3"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.70.3.tgz#e54ff18ec6098ad730b281bed89595da27871ca8"
-  integrity sha512-pDfR7pnUt4ooOeEbJeBALYmV32a4nQTok+UEMujTDnVO+ZJ6mt2aLk6D6Qvlr6AGh+5tAwctZzmXsTG8EhZU+w==
+"@mindful-web/marko-core@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.80.2.tgz#60b7af25297b040e579db7d91efaad017e619706"
+  integrity sha512-lMaIyDRO+5O/Ei1OR778Tvz9VFgjx8L8v1xNlTjZJ0jhwPmYLtfp1xMptIqOSIOj7i1K2cMQeJE52wd0xK81tw==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/marko-express" "^1.70.3"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
 
 "@mindful-web/marko-express@^1.70.3":
   version "1.70.3"
@@ -714,59 +714,59 @@
     marko "~4.20.0"
     pretty "^2.0.0"
 
-"@mindful-web/marko-node-require@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-node-require/-/marko-node-require-1.57.0.tgz#a56a0b890420fd168790a5e3b47dac0eda1b371e"
-  integrity sha512-L2T0Paj5ppRBIXGhkSgAMktq6tpIN7vWU+nw1PVYH7XLZk3DtfP4CTAHBifYe9v5AWA5oPJJ0NODApioaYIArw==
+"@mindful-web/marko-node-require@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-node-require/-/marko-node-require-1.80.2.tgz#974bd0f20e0f0311f2c1b8bf6c090739ebc71f7f"
+  integrity sha512-60cvqR6KkuFsVn24O7NwHPXsLtaYCxOm0uK45Rg9rCp6BhD68PcvZpWVZ//dWx/sinRCohBbSYcJdkvQ7vbeGw==
   dependencies:
-    "@mindful-web/marko-compiler" "^1.57.0"
+    "@mindful-web/marko-compiler" "^1.80.2"
     marko "~4.20.0"
 
-"@mindful-web/marko-web-deferred-script-loader@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-deferred-script-loader/-/marko-web-deferred-script-loader-1.57.0.tgz#348997022f88a4cf09cb3a19cd999ee25d29ade4"
-  integrity sha512-f/bCERsyGBTnqGndakjepMTpYeZ+t9dQ9Ldw9Bt7KqZPNrDlHEPWa/EGMcHv1YhDlMtQo9jCtqZaBDZtLyYxqg==
+"@mindful-web/marko-web-deferred-script-loader@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-deferred-script-loader/-/marko-web-deferred-script-loader-1.80.2.tgz#3118dbb9a95a836688c308c98180025d233f773e"
+  integrity sha512-ayjBiJUICESWwzv/7yX5DaDJzhS9h35u782Wr1p4CC8viq7GPDIhZe3kkFuqYxRfEGU4Emjon3rnISKvqGUr4Q==
   dependencies:
-    "@mindful-web/object-path" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
 
-"@mindful-web/marko-web-gam@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gam/-/marko-web-gam-1.57.0.tgz#f5d2413cce862c636478a50f5d0a9adeec073b08"
-  integrity sha512-7XQ7FeUCL9PBD2ivraJq/IWbGtmSUSHe8BUSvlv6zODJKRS0qokvIh/t66wX165Fw74Ld0x6/YbX+SDR1BZP9w==
+"@mindful-web/marko-web-gam@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gam/-/marko-web-gam-1.80.2.tgz#b8ab30136d5136e665330a23bd6d173295468089"
+  integrity sha512-zrRFLG9RfDkizLwjkOcqPsTMOW6RHMiE8IrVJg6hhecOy0eIrBAHZdrxWQLU0jeUOUvg58mbnygEas5YrCwZhw==
   dependencies:
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     scrollmagic "^2.0.8"
 
-"@mindful-web/marko-web-gcse@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gcse/-/marko-web-gcse-1.57.0.tgz#e81832d633723554e1f20c727b362762e7121b12"
-  integrity sha512-B5RtV36i9MBx323lupCYVnzopG2w9kGUn9rAuV1jXOhUeUJ49F1a/+Om0DnDbByWWsnxOLcFf2X51SFLQ2X+MQ==
+"@mindful-web/marko-web-gcse@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gcse/-/marko-web-gcse-1.80.2.tgz#4230fc82ff9df937601452dbea774b108fa3a767"
+  integrity sha512-AbvnzI2yc2AfU4Hi2DLBiqv4/VcsPWfL3qvOWpQYytWFb1ToquB7M5soqq3l/BFHKzOCTK0Ib8MhJmHCNQuLvw==
   dependencies:
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
 
-"@mindful-web/marko-web-gtm@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gtm/-/marko-web-gtm-1.57.0.tgz#0a6a81e92643e71790dc871f18c3fd131b689dc8"
-  integrity sha512-AEfm1WI6wNl4RcMAgZVqXJsxNC6CbvvGArJ/up5B0XGjoWcM/1CS7IdUj4s9OFAWKsg22Cqn5bDds75bONuedA==
+"@mindful-web/marko-web-gtm@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-gtm/-/marko-web-gtm-1.80.2.tgz#519f116b0899a7d810599d0dd52c4ecd8716b30a"
+  integrity sha512-um0diWM9xnoQV1AmLAHYaJNoi50d++HwYuoWu70uJ4KvuFDnyl3Iw9axT6MEKn8cYIHyoa1syNB44xQA4B3xXg==
   dependencies:
     "@mindful-web/inflector" "^1.0.0"
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-html-sitemap@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-html-sitemap/-/marko-web-html-sitemap-1.57.0.tgz#bd3f508aab6f350e81f464418a5efd9b220105e2"
-  integrity sha512-hLAzBrn9I0LBvdzAcHpl95D7K6+aG/7QCuzpb6ItXwFXw+WZ6iOaJ04YXpbYjqJTzlXLCk5b/zJuaat5KKRMVw==
+"@mindful-web/marko-web-html-sitemap@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-html-sitemap/-/marko-web-html-sitemap-1.80.2.tgz#1d789f9c8a58a2ed98044444685cb7aaba7077f8"
+  integrity sha512-aXW8nCbG6tMXDTkttDi8eP3rgkaIRl7KGTviCEniSD2t0bRwwyYVqkrdHwbVxnxYWuPrGGnd7Rju+t5tJGpNqQ==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     graphql "^14.5.4"
     graphql-tag "^2.12.6"
 
@@ -775,14 +775,14 @@
   resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-icons/-/marko-web-icons-1.59.2.tgz#b84909500aa2d68988e398b954540ccb86e8dc25"
   integrity sha512-2XAnjAwa9W8X/fDjaKIgCoPZueM58qL5i+P3QKP7HdxBKXxUZxjNHsmS2tcX+c1K7KRJ+pQID9M3HfMhDAFedA==
 
-"@mindful-web/marko-web-identity-x@^1.79.9":
-  version "1.79.9"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-identity-x/-/marko-web-identity-x-1.79.9.tgz#b3d086997bf25ab0ed97fb48228245b65a3ed7ef"
-  integrity sha512-tqhiaDdRUss/UVhUpxgj7n+wwp0Z7+73zvCJZISMu/vNKfPV1PRIz8EM51GaXwFsa5ub1ITVbVXzdAFYD+L++Q==
+"@mindful-web/marko-web-identity-x@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-identity-x/-/marko-web-identity-x-1.80.2.tgz#623c81cfb235d482c5f544dc6c4b98edd48f15c7"
+  integrity sha512-UlVepJwAygj7+BlOjSOvsJFCs/qvQZemWlJF4Vc+KLPZnSqyr5ewq8CpuP7GSqKW7hdEu34bOkZiI3AyF6b+1g==
   dependencies:
-    "@mindful-web/marko-web-gtm" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-web-gtm" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     apollo-cache-inmemory "^1.6.6"
     apollo-client "^2.6.10"
     apollo-link-context "^1.0.20"
@@ -798,30 +798,30 @@
     node-fetch "^2.6.9"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-inquiry@^1.60.0":
-  version "1.60.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-inquiry/-/marko-web-inquiry-1.60.0.tgz#6dfefed2cccaaa44f78192d8826b94024a71cc95"
-  integrity sha512-zB5YyPziSIeKYtmshDRCu0PhW+ZsNu9mVq9M8+o0E81YtAIMyq7pqOIKcDY4LLXENRyLBNTXkZRLLXrH+UX2fA==
+"@mindful-web/marko-web-inquiry@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-inquiry/-/marko-web-inquiry-1.80.2.tgz#a6ef2959d40f340e0dd061abde43c1ce6b37fd27"
+  integrity sha512-l3zbjE1zDp5TuNNH0mIK7HMVeQ47IKbIWxudU/WXvSQ5+vq96o91wgHPrOquGpzzq6v4+8phOv0+hc2xXM7QSA==
   dependencies:
     "@mindful-web/env" "^1.0.0"
     "@mindful-web/marko-web-mindful-email" "^1.60.0"
     "@mindful-web/marko-web-recaptcha" "^1.26.1"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     body-parser "^1.20.1"
     express "^4.18.2"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
     i18n-iso-countries "^4.3.1"
 
-"@mindful-web/marko-web-leaders@^1.59.2":
-  version "1.59.2"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.59.2.tgz#e85cc98a4d0588dc84ac15170a97f484676ba832"
-  integrity sha512-li/ffuyWbR9CWjxXx+E7CM7fwKhh8HWbKNDyM6oH2QMoTewP8WaywDHAjtjW7iQmZPtg2r79C57Gu81avapGpA==
+"@mindful-web/marko-web-leaders@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.80.2.tgz#4aedb011541dec9bb1a4c14ee37de9f734ed3040"
+  integrity sha512-PrA2u0DwoiF/2kvym8kYm+0nR+F+njRcgApElOF9nW7apkv0Yb+ItARFv+2zM15R+M/jU5jODmKH2DovYwuZzw==
   dependencies:
     "@mindful-web/leaders-program" "^1.52.0"
     "@mindful-web/marko-web-icons" "^1.59.2"
-    "@mindful-web/object-path" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
     object-path "^0.11.8"
 
 "@mindful-web/marko-web-mindful-email@^1.60.0":
@@ -833,41 +833,41 @@
     debug "^4.1.1"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-native-x@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-native-x/-/marko-web-native-x-1.57.0.tgz#96113e5779f56bdadc0c4db36b1c0bc37c954d3b"
-  integrity sha512-6m9fwEz6sqQQcCxwNhzw5SEIqlAIXrHpnMBSpTwAmAvQhCZXGeXEDx41C2NNkhInal/2VWT1cQ/NznFRmxJJ5w==
+"@mindful-web/marko-web-native-x@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-native-x/-/marko-web-native-x-1.80.2.tgz#484cbe021dfd8e0a3134652a858c1e484b243eaa"
+  integrity sha512-6NDuwT8jQFbxeISgm1bix+YmzIZcpHkaTwTG7Y+9Q/VMzwbaIsUqegChTf3sqL0ejJA215Y3j9nxqoJb0sbjWQ==
   dependencies:
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/marko-web-gtm" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/marko-web-gtm" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     graphql-tag "^2.12.6"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-omeda-identity-x@^1.79.9":
-  version "1.79.9"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.79.9.tgz#d2cc24607bb6e09791d87b3845b0cab2ff9603b4"
-  integrity sha512-f63k0m6oUhsaNITDBgh8lriZoQHPtnC1ZkwnG47Hoo7B1NZCtp1s9VzPk/Jt7ZRZKlPPQSANemT/LzxzVPnlyw==
+"@mindful-web/marko-web-omeda-identity-x@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.80.2.tgz#4bad80ebd3a66a5c285af4b2f5a1ff170b80edd0"
+  integrity sha512-PVOQ0xEwn8O4fwzatGV1f8dqFTxEjBsLo4FDgfyanfJ573dX1TNyQQveqbvXVpZnXUYIDh0hrslPD1vAfVFD0Q==
   dependencies:
-    "@mindful-web/marko-web-identity-x" "^1.79.9"
-    "@mindful-web/marko-web-omeda" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-web-identity-x" "^1.80.2"
+    "@mindful-web/marko-web-omeda" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     "@parameter1/joi" "^1.2.10"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-omeda@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda/-/marko-web-omeda-1.57.0.tgz#e21eedeccfbf36e6f656282a93e23f8e88fbf8c4"
-  integrity sha512-bnxXD1qjqSRruPCnRuvrWG2da7iK9ibM6t3dG/kvTUdkp8T1b/pPiEi4x1oeSmxwyEJF6D60xKXQkYK/rEJguA==
+"@mindful-web/marko-web-omeda@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda/-/marko-web-omeda-1.80.2.tgz#f547323355157220cdddaa550652e56f3613f80d"
+  integrity sha512-ow2wsmaUgPmCvxSiRkHxcHy6XD1LQcTHjCdRet5uRhsbGtzZy9eZ4ocKX4tkfGURsSMNpfEyht7hcmdwoVKbuw==
   dependencies:
     "@mindful-web/env" "^1.0.0"
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
     "@mindful-web/marko-web-recaptcha" "^1.26.1"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
     "@parameter1/omeda-graphql-client" "^0.7.2"
     body-parser "^1.20.1"
     debug "^4.3.4"
@@ -878,15 +878,15 @@
     node-fetch "^2.6.9"
     tldjs "^2.3.1"
 
-"@mindful-web/marko-web-p1-events@^1.79.5":
-  version "1.79.5"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-p1-events/-/marko-web-p1-events-1.79.5.tgz#05c454a254801891f4c72e259c0580d432dceb80"
-  integrity sha512-WrTkTmhPLzb2NhUkSrLSFdRoS+YCtx97AQzAiiKoOTSdc6yu69Yl61ze4001oHEVT54vaZoaXKFJkhGM54MrzQ==
+"@mindful-web/marko-web-p1-events@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-p1-events/-/marko-web-p1-events-1.80.2.tgz#cf3fbdaef7dab9341096ac65b6613286410ee3df"
+  integrity sha512-NKuLq5ku8Zvy7lhTrwTx+UbS1J+uoWjVelsxhH1GpxdM7tEwTrEMZkz+aAz5XBqV6B5DdRx3qiQbD5fHo2Nsbw==
   dependencies:
     "@mindful-web/inflector" "^1.0.0"
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     nanoid "^3.3.4"
 
 "@mindful-web/marko-web-recaptcha@^1.26.1":
@@ -897,77 +897,77 @@
     http-errors "^1.8.1"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-reveal-ad@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-reveal-ad/-/marko-web-reveal-ad-1.57.0.tgz#01b6538cd0be66b5d7b84c0766f9f65f6a0afadb"
-  integrity sha512-Sy0I+ZNX7/JVmVFs1fNTX3oFJCvSmlDnSFg7jpVwnvI1vEvE9AVcGByn4hM3CNBIgfqcMWMWFRT2CTkESvedUQ==
+"@mindful-web/marko-web-reveal-ad@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-reveal-ad/-/marko-web-reveal-ad-1.80.2.tgz#11673b4ed0dd9b8754dd01c4eb8ca22117aee792"
+  integrity sha512-4+VK1k2KSK2pCYb9OfmUvYvsmXaEEkBtNHewROLhL1B1/s6JUvayIWMSVvtAX7JGFJuhpgealhYDxt/oxn6Ciw==
   dependencies:
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
 
-"@mindful-web/marko-web-search@^1.68.0":
-  version "1.68.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-search/-/marko-web-search-1.68.0.tgz#e091fe96059067b4172144469c27d842acc06c94"
-  integrity sha512-s0UJkUB69rzDrGkB6EVZzKEIzBnfippjbBBvHpMe4QbVqsv9fNLXcszvaRxKzmX+qbeNuAueszQl2VgduTuHtg==
+"@mindful-web/marko-web-search@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-search/-/marko-web-search-1.80.2.tgz#b39f9276da67f42acd8da4fb345cd237c8da1485"
+  integrity sha512-RpCiANt6/H21c0IZCAY3nWx+NkvGTO4ywvtRqUOhqjbztMDsuQdjafWm8tuxVoPufXEElk8LzTX2eN6qM8E6nQ==
   dependencies:
     "@mindful-web/inflector" "^1.0.0"
     "@mindful-web/marko-web-icons" "^1.59.2"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     "@parameter1/joi" "^1.2.10"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-social-sharing@^1.79.3":
-  version "1.79.3"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-social-sharing/-/marko-web-social-sharing-1.79.3.tgz#422773db29e040f20d35ec41dd80debc14659475"
-  integrity sha512-2V4R2hrTmHCPekbwKT3ht8byBOI+85GJFBuXHLSjPxlGMZ1uJLa0scUz+XDHEEO0weTlly9or3LQ8GlqTvLq2g==
+"@mindful-web/marko-web-social-sharing@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-social-sharing/-/marko-web-social-sharing-1.80.2.tgz#75e9cae7913d5a5f7dc29b197060098f889967a7"
+  integrity sha512-Ihjus4biehMSG4NcspB5wtFQ406KUkIeg28C8Zxhgz1vO8RTcf8r4KGPS+0gcQIktGP/1v669fpHGjftBnx7bA==
   dependencies:
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
 
-"@mindful-web/marko-web-theme-monorail-magazine@^1.79.5":
-  version "1.79.5"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail-magazine/-/marko-web-theme-monorail-magazine-1.79.5.tgz#22b26cfacaed57aab9d22cfe998916ba18e75c62"
-  integrity sha512-CmOWm5+bJ8qHH6on9KjD9HumT5lWNJFmAOgfCiEfYDHkOe0aGTLAJjUJ+jEsiMd2vAzLLGgS5r+DbgoZ0bo4Uw==
+"@mindful-web/marko-web-theme-monorail-magazine@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail-magazine/-/marko-web-theme-monorail-magazine-1.80.2.tgz#2cc4a0f6c3d27c3fbd6422494288b171c6df919a"
+  integrity sha512-YuGA/D842iZ1e3BzVNISefAHDpsNrseZxeoBtiIgXdzSMGZs5ld8PbDZCZPNVy9TWYLWlY++pbXyqbDNqqQf3g==
   dependencies:
-    "@mindful-web/marko-web-gtm" "^1.57.0"
-    "@mindful-web/marko-web-p1-events" "^1.79.5"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/marko-web-gtm" "^1.80.2"
+    "@mindful-web/marko-web-p1-events" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.79.9":
-  version "1.79.9"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.79.9.tgz#315052fc39d7e46f9e5edc6823abb1fbe317c57f"
-  integrity sha512-yoTAxJqLZuioDhhcZDdnSWgRIMFD6gNlT2xe5bDQAmiZnVvJOANCC9HPm1GdwwEPtDlQd2N11WdLcBrdPAhklQ==
+"@mindful-web/marko-web-theme-monorail@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.80.2.tgz#a5be97fc411ba10545832fff8e4c79b01b64fe46"
+  integrity sha512-aWGeGnay8VDz9dsa5v2O53tcMWvuliG8Q7TMneZhBa7PZmGtdDzz0JN/P5cwgwyfOd016XrpJZg8XfEiaKbEZw==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/html" "^1.0.0"
-    "@mindful-web/image" "^1.57.0"
+    "@mindful-web/image" "^1.80.2"
     "@mindful-web/inflector" "^1.0.0"
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/marko-web-gam" "^1.57.0"
-    "@mindful-web/marko-web-gtm" "^1.57.0"
-    "@mindful-web/marko-web-html-sitemap" "^1.57.0"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/marko-web-gam" "^1.80.2"
+    "@mindful-web/marko-web-gtm" "^1.80.2"
+    "@mindful-web/marko-web-html-sitemap" "^1.80.2"
     "@mindful-web/marko-web-icons" "^1.59.2"
-    "@mindful-web/marko-web-identity-x" "^1.79.9"
-    "@mindful-web/marko-web-inquiry" "^1.60.0"
-    "@mindful-web/marko-web-native-x" "^1.57.0"
-    "@mindful-web/marko-web-omeda" "^1.57.0"
-    "@mindful-web/marko-web-omeda-identity-x" "^1.79.9"
-    "@mindful-web/marko-web-p1-events" "^1.79.5"
+    "@mindful-web/marko-web-identity-x" "^1.80.2"
+    "@mindful-web/marko-web-inquiry" "^1.80.2"
+    "@mindful-web/marko-web-native-x" "^1.80.2"
+    "@mindful-web/marko-web-omeda" "^1.80.2"
+    "@mindful-web/marko-web-omeda-identity-x" "^1.80.2"
+    "@mindful-web/marko-web-p1-events" "^1.80.2"
     "@mindful-web/marko-web-recaptcha" "^1.26.1"
-    "@mindful-web/marko-web-reveal-ad" "^1.57.0"
-    "@mindful-web/marko-web-search" "^1.68.0"
-    "@mindful-web/marko-web-social-sharing" "^1.79.3"
-    "@mindful-web/mindful" "^1.67.2"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/marko-web-reveal-ad" "^1.80.2"
+    "@mindful-web/marko-web-search" "^1.80.2"
+    "@mindful-web/marko-web-social-sharing" "^1.80.2"
+    "@mindful-web/mindful" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     "@parameter1/joi" "^1.2.10"
     "@trevoreyre/autocomplete-vue" "^2.4.1"
     bootstrap "^4.6.2"
@@ -980,27 +980,27 @@
     node-fetch "^2.6.9"
     ua-parser-js "^1.0.33"
 
-"@mindful-web/marko-web@^1.72.3":
-  version "1.72.3"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web/-/marko-web-1.72.3.tgz#5c1076f2dc46b1bfb195687cd5d07472abff7645"
-  integrity sha512-Ue/+vdAOgC143BzEpjP43h+WRYVvKnDKVhHfN+eca6N38i3a8opLTS1NhnjS+X8L8sp8QueG5qq6IIAcXPS9zA==
+"@mindful-web/marko-web@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web/-/marko-web-1.80.2.tgz#8aaa13f528221aa8cb6ea1663d60018748bbe581"
+  integrity sha512-x8sEfOtJ0hS7tki9ilZxGjDqzNO4P7fIOwBl+47ytHJU012XDCVqDAKVjk736K3CeN4SM86tmmqlZAfVQFnUPA==
   dependencies:
     "@godaddy/terminus" "^4.11.2"
     "@mindful-web/apollo-ssr" "^1.0.0"
     "@mindful-web/dayjs" "^1.49.2"
-    "@mindful-web/embedded-media" "^1.57.0"
+    "@mindful-web/embedded-media" "^1.80.2"
     "@mindful-web/express-apollo" "^1.0.0"
     "@mindful-web/graphql-fragment-types" "^1.0.0"
     "@mindful-web/html" "^1.0.0"
-    "@mindful-web/image" "^1.57.0"
+    "@mindful-web/image" "^1.80.2"
     "@mindful-web/inflector" "^1.0.0"
     "@mindful-web/marko-express" "^1.70.3"
-    "@mindful-web/marko-node-require" "^1.57.0"
-    "@mindful-web/marko-web-deferred-script-loader" "^1.57.0"
-    "@mindful-web/object-path" "^1.57.0"
+    "@mindful-web/marko-node-require" "^1.80.2"
+    "@mindful-web/marko-web-deferred-script-loader" "^1.80.2"
+    "@mindful-web/object-path" "^1.80.2"
     "@mindful-web/tenant-context" "^1.0.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     async "^3.2.4"
     cheerio "^1.0.0-rc.12"
     cookie-parser "^1.4.6"
@@ -1018,15 +1018,15 @@
     vue "^2.7.14"
     vue-server-renderer "^2.7.14"
 
-"@mindful-web/mindful@^1.67.2":
-  version "1.67.2"
-  resolved "https://registry.yarnpkg.com/@mindful-web/mindful/-/mindful-1.67.2.tgz#13c3203d0d12a885c6c047a83e6bf7ec8d9b0a92"
-  integrity sha512-TJ+FshoOIUG2rD221CF0RE4ryOMIH+n36PgaCMdmd4wTroUFgS3oQbZaifRKHSvGBGcSONjoETNf1QGld/Jx/w==
+"@mindful-web/mindful@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/mindful/-/mindful-1.80.2.tgz#ef0624b7f05608e7d3748506edc8dfa4c16f8ffd"
+  integrity sha512-cbPgvx6RQzDpRPkquKOy+02U2DMFuSf75hvoMKsJRvulpGR0njhPGH524nJ3xKKF3hqVnOrORKTjIsqbLCcXRg==
   dependencies:
     "@mindful-web/env" "^1.0.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
-    "@mindful-web/web-common" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
+    "@mindful-web/web-common" "^1.80.2"
     "@parameter1/joi" "^1.2.10"
     debug "^4.1.1"
     express "^4.17.1"
@@ -1037,12 +1037,12 @@
     newrelic "^9.10.2"
     node-fetch "^2.6.1"
 
-"@mindful-web/object-path@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/object-path/-/object-path-1.57.0.tgz#d24586829e11592605a11e025f063e15e84c1949"
-  integrity sha512-bXBZsKljlsvvQIY4F1+NxAu1MnZtNdp+i4YqCZmLSWbJC5SBBFpZMU/W4Dim4aMVrkzIpzQ13a/enfxXr6/EPA==
+"@mindful-web/object-path@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/object-path/-/object-path-1.80.2.tgz#c294720360b69703ebb7619b98e16bfe99b7adbc"
+  integrity sha512-iArPOJ5Z14TuHhX5sxzpwbMVc14GfX3Pu6rG0LPsC32Y6G2VRj05uKNxufQKSfA3eeIbIbOX0B67Or7A0PtawA==
   dependencies:
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/utils" "^1.80.2"
     object-path "^0.11.8"
 
 "@mindful-web/tenant-context@^1.0.0":
@@ -1050,19 +1050,19 @@
   resolved "https://registry.yarnpkg.com/@mindful-web/tenant-context/-/tenant-context-1.0.0.tgz#2c88b53b27b21fbb7f2d138a53aba7052a951b51"
   integrity sha512-kuC1DxD40PTlSE2+xUxS5bFnC65YhooE1TAM6k514bpkKyJ3P0UWx5fGT8r5s+8PMW57mTBjhL+JFPeEpis8Kw==
 
-"@mindful-web/utils@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/utils/-/utils-1.57.0.tgz#cf9264a26143bd08f216edf0fcbe6d2bf9852418"
-  integrity sha512-juuhtK+9RQOe4iFMVm9D3D0I6Nmdn7b9z2GrfLY4e7pIcz+YMCmGw5w2ST0xXkMaKr6s66WbOLA8k+GNQyhA5g==
+"@mindful-web/utils@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/utils/-/utils-1.80.2.tgz#c2086b1a958ce1fb0e2b936b92c72b841aba7577"
+  integrity sha512-FhU7YADzPTfQMsdBJPln9O8bBJR+741HHnTKgQRXaFzKR84TTyJZgyal64TJ+wdkThBLCmRlx7rF7waeHbCMCA==
 
-"@mindful-web/web-cli@^1.71.4":
-  version "1.71.4"
-  resolved "https://registry.yarnpkg.com/@mindful-web/web-cli/-/web-cli-1.71.4.tgz#967f9de5132e5551bee04988ac06d56a53d65537"
-  integrity sha512-ckqFRiAPcymR6+k4jgSHnDfGSlJR0xQrU2AE2/0PYjfmQYO68MrQ+0Nt2Xk+tF7Aa9OnG/7rPKQ2yTVgm3pN9w==
+"@mindful-web/web-cli@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/web-cli/-/web-cli-1.80.2.tgz#a2f0c81faa152e0ec46a71ae4467d331112e02b2"
+  integrity sha512-bLEjsJUAbFVS9zr0IMp0ZPZZVVpjwT6oDapNMGabx3BJm3QWjaiKX3tdYxlGirBEnCaPjBsDqy/vMmGaepHkoA==
   dependencies:
     "@fullhuman/postcss-purgecss" "^5.0.0"
-    "@mindful-web/marko-compiler" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/marko-compiler" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     "@vitejs/plugin-vue2" "^2.2.0"
     autoprefixer "^10.4.13"
     chalk "^4.1.2"
@@ -1083,14 +1083,14 @@
     vite "~4.1.4"
     vue "^2.7.14"
 
-"@mindful-web/web-common@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/web-common/-/web-common-1.57.0.tgz#996c911d5c602c58d1bb392bf4c627c26326debc"
-  integrity sha512-PO1/NRHKfL8iKu1Ana94ynRf3bb1kh2rm8p8t98ECVqbzK5L5utVoZILNmxA4+ASUTv97vaLbpQvXgghYqwIuQ==
+"@mindful-web/web-common@^1.80.2":
+  version "1.80.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/web-common/-/web-common-1.80.2.tgz#96a95c5bbe6be17184fb7ebef6fafbdcbaad477e"
+  integrity sha512-SRiBQpISVRcEfiL17+x9QWvI/mBvpLg2H0ozKlnPk6p2uj3JThPOibpDIXWtqs/NR11CuJilqajwJfVWxci37A==
   dependencies:
     "@mindful-web/inflector" "^1.0.0"
-    "@mindful-web/object-path" "^1.57.0"
-    "@mindful-web/utils" "^1.57.0"
+    "@mindful-web/object-path" "^1.80.2"
+    "@mindful-web/utils" "^1.80.2"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
     http-errors "^1.8.1"
@@ -6747,7 +6747,7 @@ postcss-convert-values@^5.1.3:
     browserslist "^4.21.4"
     postcss-value-parser "^4.2.0"
 
-postcss-critical-split@mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081:
+"postcss-critical-split@github:mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081":
   version "2.5.3"
   resolved "https://codeload.github.com/mrnocreativity/postcss-critical-split/tar.gz/51bb6d62bc75d635e32dcce90f30ba3ef6299081"
 
