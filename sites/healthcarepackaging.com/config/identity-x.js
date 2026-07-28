@@ -49,7 +49,7 @@ module.exports = configureIdentityX({
       },
       {
         label: 'Company Initiatives',
-        id: '62979d881f972983813288dd',
+        id: '62979ec0650fd8b42fefed69',
         type: 'custom-select',
         required: true,
         width: 0.5,

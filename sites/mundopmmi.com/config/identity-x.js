@@ -40,22 +40,22 @@ module.exports = configureIdentityX({
         width: 0.5,
       },
     ],
-    // [
-    //   {
-    //     label: 'Primary Industry or Product',
-    //     id: '6297a1f0650fd84a97efed81',
-    //     type: 'custom-select',
-    //     required: true,
-    //     width: 0.5,
-    //   },
-    //   {
-    //     label: 'Company Initiatives',
-    //     id: '',
-    //     type: 'custom-select',
-    //     required: true,
-    //     width: 0.5,
-    //   },
-    // ],
+    [
+      {
+        label: '¿En qué industria se concentran tus productos?',
+        id: '6297a1f0650fd84a97efed81',
+        type: 'custom-select',
+        required: true,
+        width: 0.5,
+      },
+      // {
+      //   label: 'Company Initiatives',
+      //   id: '',
+      //   type: 'custom-select',
+      //   required: true,
+      //   width: 0.5,
+      // },
+    ],
   ],
   defaultFieldLabels: {
     givenName: 'Nombre',

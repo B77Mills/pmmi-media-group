@@ -39,22 +39,22 @@ module.exports = configureIdentityX({
         width: 0.5,
       },
     ],
-    // [
-    //   {
-    //     label: 'Primary Industry or Product',
-    //     id: '6285417ea1be7355b22a8c9e',
-    //     type: 'custom-select',
-    //     required: true,
-    //     width: 0.5,
-    //   },
-    //   {
-    //     label: 'Company Initiatives',
-    //     id: '62979d881f972983813288dd',
-    //     type: 'custom-select',
-    //     required: true,
-    //     width: 0.5,
-    //   },
-    // ],
+    [
+      {
+        label: 'Primary Industry or Product',
+        id: '6285417ea1be7355b22a8c9e',
+        type: 'custom-select',
+        required: true,
+        width: 0.5,
+      },
+      {
+        label: 'Company Initiatives',
+        id: '62979d881f972983813288dd',
+        type: 'custom-select',
+        required: true,
+        width: 0.5,
+      },
+    ],
   ],
   gtmUserFields: {
     primary_business: '6285417ea1be7355b22a8c9e',
