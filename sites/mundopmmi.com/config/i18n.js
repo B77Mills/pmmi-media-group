@@ -119,4 +119,8 @@ module.exports = {
   'create a free account': 'Cree una cuenta gratuita',
   'create a free': 'Cree una cuenta de',
   'account to continue reading': 'para continuar leyendo',
+  // Login form button labels, passed down to the Vue component by the theme
+  // (v1.82.0+). 'continue' is defined above.
+  'modify profile': 'Modifique su perfil',
+  logout: 'Cierre sesión',
 };
