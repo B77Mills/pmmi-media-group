@@ -107,4 +107,14 @@ module.exports = {
   'story continues': 'El Artículo Continúa',
   'in print': 'Impresos',
   'fill out the form below to request more information about ': 'Llene la forma de abajo para solicitar mayor información de ',
+
+  // Content Meter translations (v1.81.1+)
+  "We hope you've enjoyed your articles.": 'Esperamos haya disfrutado sus artículos.',
+  'You have 1 article view remaining.': 'Tiene 1 vista de artículo restante.',
+  'You have {count} article views remaining.': 'Tiene {count} vistas de artículos restantes.',
+  'This is your last free article.': 'Este es su último artículo gratuito.',
+  'Enjoy this free article.': 'Disfrute este artículo gratuito.',
+  'Create a free account': 'Cree una cuenta gratuita',
+  'Create a free': 'Cree una cuenta de',
+  'account to continue reading': 'para continuar leyendo',
 };
