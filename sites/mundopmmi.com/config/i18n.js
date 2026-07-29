@@ -109,12 +109,14 @@ module.exports = {
   'fill out the form below to request more information about ': 'Llene la forma de abajo para solicitar mayor información de ',
 
   // Content Meter translations (v1.81.1+)
-  "We hope you've enjoyed your articles.": 'Esperamos haya disfrutado sus artículos.',
-  'You have 1 article view remaining.': 'Tiene 1 vista de artículo restante.',
-  'You have {count} article views remaining.': 'Tiene {count} vistas de artículos restantes.',
-  'This is your last free article.': 'Este es su último artículo gratuito.',
-  'Enjoy this free article.': 'Disfrute este artículo gratuito.',
-  'Create a free account': 'Cree una cuenta gratuita',
-  'Create a free': 'Cree una cuenta de',
+  // NOTE: keys must be lowercase — the lookup in ../../index.js lowercases
+  // the incoming string before indexing this map.
+  "we hope you've enjoyed your articles.": 'Esperamos haya disfrutado sus artículos.',
+  'you have 1 article view remaining.': 'Tiene 1 vista de artículo restante.',
+  'you have {count} article views remaining.': 'Tiene {count} vistas de artículos restantes.',
+  'this is your last free article.': 'Este es su último artículo gratuito.',
+  'enjoy this free article.': 'Disfrute este artículo gratuito.',
+  'create a free account': 'Cree una cuenta gratuita',
+  'create a free': 'Cree una cuenta de',
   'account to continue reading': 'para continuar leyendo',
 };
