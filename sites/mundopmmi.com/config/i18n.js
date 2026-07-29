@@ -88,9 +88,9 @@ module.exports = {
   'log in': 'Conéctese',
   'log in to mundo expo pack': 'Conéctese a Mundo EXPO PACK',
   'site map': 'Mapa del sitio',
-  'log in to view the full article': 'Inicie sesion para ver el articulo completo',
-  'log in to print the full article': 'Inicie sesion para imprimir el articulo completo',
-  'Complete your profile to print the full article': 'Completa tu perfil para imprimir el articulo completo',
+  'log in to view the full article': 'Inicie sesión para ver el artículo completo',
+  'log in to print the full article': 'Inicie sesión para imprimir el artículo completo',
+  'complete your profile to print the full article': 'Complete su perfil para imprimir el artículo completo',
   'signing up to receive your email notifications': 'registrarse para recibir sus notificaciones por correo electrónico',
   'your email helps us uphold our standards of quality content. unlock full access to our articles with a quick submission.': 'Su correo electrónico nos ayuda a mantener nuestros estándares de contenido de calidad. Desbloquee el acceso completo a nuestros artículos con un envío rápido.',
   continue: 'Continúa',
@@ -109,12 +109,18 @@ module.exports = {
   'fill out the form below to request more information about ': 'Llene la forma de abajo para solicitar mayor información de ',
 
   // Content Meter translations (v1.81.1+)
-  "We hope you've enjoyed your articles.": 'Esperamos haya disfrutado sus artículos.',
-  'You have 1 article view remaining.': 'Tiene 1 vista de artículo restante.',
-  'You have {count} article views remaining.': 'Tiene {count} vistas de artículos restantes.',
-  'This is your last free article.': 'Este es su último artículo gratuito.',
-  'Enjoy this free article.': 'Disfrute este artículo gratuito.',
-  'Create a free account': 'Cree una cuenta gratuita',
-  'Create a free': 'Cree una cuenta de',
+  // NOTE: keys must be lowercase — the lookup in ../../index.js lowercases
+  // the incoming string before indexing this map.
+  "we hope you've enjoyed your articles.": 'Esperamos haya disfrutado sus artículos.',
+  'you have 1 article view remaining.': 'Tiene 1 vista de artículo restante.',
+  'you have {count} article views remaining.': 'Tiene {count} vistas de artículos restantes.',
+  'this is your last free article.': 'Este es su último artículo gratuito.',
+  'enjoy this free article.': 'Disfrute este artículo gratuito.',
+  'create a free account': 'Cree una cuenta gratuita',
+  'create a free': 'Cree una cuenta de',
   'account to continue reading': 'para continuar leyendo',
+  // Login form button labels, passed down to the Vue component by the theme
+  // (v1.82.0+). 'continue' is defined above.
+  'modify profile': 'Modifique su perfil',
+  logout: 'Cierre sesión',
 };
