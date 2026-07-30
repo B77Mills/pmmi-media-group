@@ -225,7 +225,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 $ const bodyId = `content-body-${content.id}`;
 
                 <global-supplier-submitted-block labels=content.labels />
-                <theme-content-geo-summary-block content=content title="Key Takeaways" />
+                <theme-content-geo-summary-block content=content title=i18n("Key Takeaways") />
                 <theme-body-with-injection
                   content=content
                   aliases=aliases

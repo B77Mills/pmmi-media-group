@@ -123,4 +123,5 @@ module.exports = {
   // (v1.82.0+). 'continue' is defined above.
   'modify profile': 'Modifique su perfil',
   logout: 'Cierre sesión',
+  'key takeaways': 'Conclusiones clave',
 };
