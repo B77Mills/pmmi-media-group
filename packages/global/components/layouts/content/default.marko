@@ -17,6 +17,7 @@ $ const {
 } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
+$ const lang = site.config.lang || "en";
 
 $ contentAccessState.setFormDisplay({ req });
 $ const { formId: idxFormId, displayForm: displayIdxForm, cookie: idxSuveyCookie } = contentAccessState;
@@ -108,6 +109,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           path=content.siteContext.path
           providers=["print", "email", "facebook", "linkedin", "twitter", "pinterest", "google"]
           print-path=`/print/content/${content.id}`
+          lang=lang
           ssr=true
         />
       </if>
