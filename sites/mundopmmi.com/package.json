@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/mundopmmi.com",
-  "version": "4.24.1",
+  "version": "4.24.2",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/mundopmmi.com",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "@mindful-web/object-path": "^1.83.1",
     "@mindful-web/utils": "^1.83.1",
     "@mindful-web/web-cli": "^1.83.1",
-    "@pmmi-media-group/package-global": "^4.24.1",
+    "@pmmi-media-group/package-global": "^4.24.2",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
