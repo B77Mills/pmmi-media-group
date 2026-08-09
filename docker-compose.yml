@@ -10,6 +10,10 @@ x-node-defaults: &node
   volumes:
     - ./:/root:cached
     - ./node_modules:/root/node_modules:delegated
+    # Local mindful-web checkout, for developing against unpublished package
+    # changes. Set MINDFUL_WEB_PATH in .env to enable; when unset this mounts an
+    # empty placeholder and nothing references it. See scripts/mindful-web-link.sh.
+    - ${MINDFUL_WEB_PATH:-./.mindful-web-unlinked}:/mindful-web:cached
     - yarn-cache:/.yarn-cache
 
 x-env-defaults: &env
@@ -32,6 +36,7 @@ x-env-defaults: &env
   LEADERS_ENABLED: ${LEADERS_ENABLED-}
   LEADERS_LOGO: ${LEADERS_LOGO-}
   MINDFUL_EMAIL_API_KEY: ${MINDFUL_EMAIL_API_KEY}
+  MINDFUL_WEB_PATH: ${MINDFUL_WEB_PATH-}
   NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-}
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
@@ -69,7 +74,7 @@ x-env-development: &env-development
 
 x-site-command: &site-cmd
   <<: *node
-  entrypoint: ["yarn"]
+  entrypoint: ["/root/scripts/mindful-web-link.sh"]
   command: ["dev"]
 
 volumes:
