@@ -48,13 +48,13 @@ module.exports = configureIdentityX({
         required: true,
         width: 0.5,
       },
-      // {
-      //   label: 'Company Initiatives',
-      //   id: '',
-      //   type: 'custom-select',
-      //   required: true,
-      //   width: 0.5,
-      // },
+      {
+        label: '¿Está usted interesado en o involucrado en alguna de las siguientes iniciativas en su compañía?',
+        id: '6a79e2675e8decf57dd8d1f3',
+        type: 'custom-select',
+        required: true,
+        width: 0.5,
+      },
     ],
   ],
   defaultFieldLabels: {
