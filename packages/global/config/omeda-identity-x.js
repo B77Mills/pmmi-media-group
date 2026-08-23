@@ -175,5 +175,94 @@ module.exports = (args) => {
       }));
       return payload;
     }),
+    // Profile updates otherwise fall through to the package's passthrough formatter, so the
+    // rapid-identify payload carries no promo attribution and any configured appends would be
+    // pushed without checking what the customer already has. Appends come from
+    // `identityXOptInHooks.onUserProfileUpdate` and are deduped against the live Omeda record,
+    // exactly like the login formatter above.
+    onUserProfileUpdateFormatter: (async ({
+      req,
+      actionSource: loginSource,
+      payload: data,
+      additionalEventData = {},
+    }) => {
+      const { user } = data;
+      const payload = { ...data };
+      // BAIL if omedaGraphQLClient isn't available; return payload.
+      if (!req.$omedaGraphQLClient) return payload;
+
+      const promoCode = getPromoCodeFor({
+        loginSource,
+        data: additionalEventData,
+        defaultPromoCode: omedaPromoCodeDefault,
+        promoCodePrefix: omedaPromoCodePrefix,
+        req,
+      });
+
+      payload.promoCode = promoCode;
+      payload.appendPromoCodes = [{ promoCode }];
+
+      /** @type {OIDXOptInHooks} */
+      const identityXOptInHooks = req.app.locals.site.getAsObject('identityXOptInHooks') || {};
+      if (!identityXOptInHooks.onUserProfileUpdate) return payload;
+
+      const {
+        demographics,
+        deploymentTypeIds,
+        productIds,
+      } = identityXOptInHooks.onUserProfileUpdate || {};
+
+      // Use original payload data to avoid altering the user record on lookup.
+      const {
+        userProductIds,
+        userDemoIds,
+        userDeploymentIds,
+      } = await getOmedaSubscriptionIds({ req, payload: data });
+
+      // Add demos, subscriptions and opt-ins, excluding any the customer already has.
+      payload.appendDemographics = (demographics || []).reduce((arr, demo) => {
+        if (userDemoIds.has(demo.id)) return arr;
+        arr.push({
+          demographicId: demo.id,
+          valueIds: demo.valueIds || [],
+          writeInValue: demo.writeInValue,
+        });
+        return arr;
+      }, []);
+
+      payload.appendSubscriptions = (productIds || []).reduce((arr, value) => {
+        const {
+          id,
+          receive = true,
+          requestedVersion,
+        } = (typeof value === 'object') ? value : { id: value, receive: true };
+        if (userProductIds.has(id)) return arr;
+        arr.push({ id, receive, ...(requestedVersion && { requestedVersion }) });
+        return arr;
+      }, []);
+
+      payload.deploymentTypes = (deploymentTypeIds || []).reduce((arr, id) => {
+        if (userDeploymentIds.has(id)) return arr;
+        arr.push({ id, optedIn: true });
+        return arr;
+      }, []);
+
+      const { newsletterSignupType } = additionalEventData;
+      // eslint-disable-next-line no-param-reassign
+      additionalEventData.autoSignups = payload.deploymentTypes.map(({ id }) => ({
+        userId: user.id,
+        productId: id,
+        promoCode,
+        actionSource: loginSource,
+        ...(newsletterSignupType && { newsletterSignupType }),
+        subscriptionEntity: buildSubscriptionEntity({
+          provider: 'omeda',
+          tenant: omedaConfig.brandKey,
+          type: 'product',
+          identifier: id,
+        }),
+      }));
+      return payload;
+    }),
   };
 };
