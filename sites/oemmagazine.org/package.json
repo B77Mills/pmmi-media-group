@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/oemmagazine.org",
-  "version": "4.24.4",
+  "version": "4.25.0",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/oemmagazine.org",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "@mindful-web/object-path": "^1.83.1",
     "@mindful-web/utils": "^1.83.1",
     "@mindful-web/web-cli": "^1.83.1",
-    "@pmmi-media-group/package-global": "^4.24.4",
+    "@pmmi-media-group/package-global": "^4.25.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
