@@ -847,23 +847,23 @@
     graphql-tag "^2.12.6"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-omeda-identity-x@^1.87.1":
-  version "1.87.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.87.1.tgz#d7f011ac7533d34a18aaba8ac186d3a1b1a91949"
-  integrity sha512-QCyqUtkINeUNKcAEnnDQxcHTO0lK5eq25YoQ/zN1zh86md4eI35MKxh5UUmNPUNm+REwLtr18WE9ydfn1Z6ucg==
+"@mindful-web/marko-web-omeda-identity-x@^1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.88.0.tgz#74e410e01afa056fc03068bd255b24561d2fd709"
+  integrity sha512-+z8u74Z6uw8Oi2W3Ozq8iEsK29ICMxwGHn0LhoYwZMu1lTn4WHDyAsskuPLOSbZbRGU91DR+CIs+V0j8fo3S5w==
   dependencies:
     "@mindful-web/marko-web-identity-x" "^1.87.1"
-    "@mindful-web/marko-web-omeda" "^1.85.0"
+    "@mindful-web/marko-web-omeda" "^1.88.0"
     "@mindful-web/object-path" "^1.83.1"
     "@mindful-web/utils" "^1.83.1"
     "@parameter1/joi" "^1.2.10"
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-omeda@^1.85.0":
-  version "1.85.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda/-/marko-web-omeda-1.85.0.tgz#0a99414c9e09525250ede44885f1e6d6f3566db6"
-  integrity sha512-/qw4h2Wotk+7rTQhp+gofuaGw36obuc7K7BS/k3k6slupKZAgC0pOXhrGeYMoZjWGFMKKRHM4b0YuMjQ42RpvA==
+"@mindful-web/marko-web-omeda@^1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda/-/marko-web-omeda-1.88.0.tgz#fb9d088108353a19b3515756f63993712096d3bd"
+  integrity sha512-1A4N1lDZllfCHvyW/v4BNKRfOy8+cK7yrJHK4dkU4rA/lezOy/TJB0lh/J2i/ZTpKJO38nA3WJuCE7uM3TwfzQ==
   dependencies:
     "@mindful-web/env" "^1.0.0"
     "@mindful-web/marko-web-deferred-script-loader" "^1.83.1"
@@ -941,10 +941,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.87.1":
-  version "1.87.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.87.1.tgz#4174a74955b2081886c3b479b2d7c3315a2158ac"
-  integrity sha512-tMPsppfn3lQgB9R+EE2kGEyPagMf/i2Jeh/oLVMtDsnUpyRIjvPZbdSWwUYAPseqgj4mpv2o78JAS2FW9FV9kQ==
+"@mindful-web/marko-web-theme-monorail@^1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.88.0.tgz#4a57f13676608f9d00085438c644f5247731e2b1"
+  integrity sha512-vhoCn3jfSqmMUsWx5HEDKhTR+Kc2beIwuIicsZNqqaxg2cIQJ9ENS7Dv/EB28P7HNe0t4pn8dd+0PtherifALA==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/html" "^1.84.0"
@@ -958,8 +958,8 @@
     "@mindful-web/marko-web-identity-x" "^1.87.1"
     "@mindful-web/marko-web-inquiry" "^1.85.0"
     "@mindful-web/marko-web-native-x" "^1.86.0"
-    "@mindful-web/marko-web-omeda" "^1.85.0"
-    "@mindful-web/marko-web-omeda-identity-x" "^1.87.1"
+    "@mindful-web/marko-web-omeda" "^1.88.0"
+    "@mindful-web/marko-web-omeda-identity-x" "^1.88.0"
     "@mindful-web/marko-web-p1-events" "^1.85.4"
     "@mindful-web/marko-web-recaptcha" "^1.85.0"
     "@mindful-web/marko-web-reveal-ad" "^1.83.1"
