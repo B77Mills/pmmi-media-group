@@ -847,10 +847,10 @@
     graphql-tag "^2.12.6"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-web-omeda-identity-x@^1.87.1":
-  version "1.87.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.87.1.tgz#d7f011ac7533d34a18aaba8ac186d3a1b1a91949"
-  integrity sha512-QCyqUtkINeUNKcAEnnDQxcHTO0lK5eq25YoQ/zN1zh86md4eI35MKxh5UUmNPUNm+REwLtr18WE9ydfn1Z6ucg==
+"@mindful-web/marko-web-omeda-identity-x@^1.87.2":
+  version "1.87.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-omeda-identity-x/-/marko-web-omeda-identity-x-1.87.2.tgz#d244c08dd483462bf55f599696a0252d0bd87aac"
+  integrity sha512-r/3K3f4FqCp3KBjFy6XIOZ+Vrp+bjadijSH5sI0Z+nlBDbgD8/iNtGXGDKEP+yz6tbPXGw5uwekuxk01oFnfNA==
   dependencies:
     "@mindful-web/marko-web-identity-x" "^1.87.1"
     "@mindful-web/marko-web-omeda" "^1.85.0"
@@ -941,10 +941,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.87.1":
-  version "1.87.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.87.1.tgz#4174a74955b2081886c3b479b2d7c3315a2158ac"
-  integrity sha512-tMPsppfn3lQgB9R+EE2kGEyPagMf/i2Jeh/oLVMtDsnUpyRIjvPZbdSWwUYAPseqgj4mpv2o78JAS2FW9FV9kQ==
+"@mindful-web/marko-web-theme-monorail@^1.87.2":
+  version "1.87.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.87.2.tgz#134ab010633b6ac1a6b8b657d2113e11b0a380be"
+  integrity sha512-LgKBmTIZh5lXPuysQgr/WtAV7qb9KmuEuSjL1NYFm6+SOYaSG5TzSJeImIuXgVJR7HYEWRbjXr1xea20DPK/wQ==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/html" "^1.84.0"
@@ -959,7 +959,7 @@
     "@mindful-web/marko-web-inquiry" "^1.85.0"
     "@mindful-web/marko-web-native-x" "^1.86.0"
     "@mindful-web/marko-web-omeda" "^1.85.0"
-    "@mindful-web/marko-web-omeda-identity-x" "^1.87.1"
+    "@mindful-web/marko-web-omeda-identity-x" "^1.87.2"
     "@mindful-web/marko-web-p1-events" "^1.85.4"
     "@mindful-web/marko-web-recaptcha" "^1.85.0"
     "@mindful-web/marko-web-reveal-ad" "^1.83.1"
