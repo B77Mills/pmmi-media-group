@@ -22,6 +22,7 @@ const utilities = [
 const mobileMenu = {
   primary: [
     ...topics,
+    { href: '/manufacturing', label: 'Manufacturing' },
   ],
   secondary: [
     subscribe,
