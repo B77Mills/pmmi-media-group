@@ -23,10 +23,21 @@ module.exports = (args) => {
     appendDemographicToHook = [],
     omedaPromoCodePrefix,
     omedaPromoCodeDefault,
+    // A metered gate registration is a paywall unlock, not a newsletter opt-in, so the configured
+    // auto-subscriptions are skipped for it by default. Sites opt back in by passing `false`.
+    skipOptInsForMeteredGate = true,
     shouldAwait = {
       onLoginLinkSent: true,
     },
   } = args;
+
+  // Both metered entry points stamp `contentGateType: 'metered'` into the event data: the meter
+  // block's own login form, and the meter's step-2 profile form (which reports a `contentGate`
+  // action source, so the source alone cannot identify it).
+  const skipsMeteredOptIns = (additionalEventData = {}) => Boolean(
+    skipOptInsForMeteredGate && additionalEventData.contentGateType === 'metered',
+  );
+
   return {
     clientKey: omedaConfig.clientKey,
     brandKey: omedaConfig.brandKey,
@@ -110,7 +121,9 @@ module.exports = (args) => {
 
       /** @type {OIDXOptInHooks} */
       const identityXOptInHooks = req.app.locals.site.getAsObject('identityXOptInHooks') || {};
-      if (!identityXOptInHooks.onLoginLinkSent) return payload;
+      if (skipsMeteredOptIns(additionalEventData) || !identityXOptInHooks.onLoginLinkSent) {
+        return payload;
+      }
 
       // Append automatic product subscriptions and deployment opt-ins to OIDX payload
       const {
@@ -204,7 +217,9 @@ module.exports = (args) => {
 
       /** @type {OIDXOptInHooks} */
       const identityXOptInHooks = req.app.locals.site.getAsObject('identityXOptInHooks') || {};
-      if (!identityXOptInHooks.onUserProfileUpdate) return payload;
+      if (skipsMeteredOptIns(additionalEventData) || !identityXOptInHooks.onUserProfileUpdate) {
+        return payload;
+      }
 
       const {
         demographics,
